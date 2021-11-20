@@ -34,7 +34,8 @@
     "lint-staged": "lint-staged",
     "check:tsc": "tsc",
     "lint-staged:js": "cross-env ESLINT_ENV=commit eslint --fix --ext .js,.jsx",
-    "lint-staged:ts": "cross-env ESLINT_ENV=commit eslint --fix --ext .ts,.tsx"
+    "lint-staged:ts": "cross-env ESLINT_ENV=commit eslint --fix --ext .ts,.tsx",
+    "release": "standard-version"
   },
   "bugs": {
     "url": "https://github.com/nuwa-design/nuwa-design/issues"
@@ -90,6 +91,7 @@
     "rollup": "^2.36.0",
     "rollup-plugin-styles": "^3.12.1",
     "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.3.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.1.3"
   },
