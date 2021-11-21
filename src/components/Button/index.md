@@ -1,6 +1,7 @@
 ---
 nav:
-  title: Components
+  title: 组件
+  order: 2
   path: /components
 ---
 
