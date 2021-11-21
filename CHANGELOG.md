@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.2](https://github.com/nuwa-design/nuwa-design/compare/v0.0.2-alpha.1...v0.0.2-alpha.2) (2021-11-21)
+
+
+### CI
+
+* 🎡 build more output ([b467c1d](https://github.com/nuwa-design/nuwa-design/commit/b467c1dd21d26d3e0ae49690726fbbc0f8b19279))
+
 ### 0.0.2-alpha.1 (2021-11-21)
 
 
