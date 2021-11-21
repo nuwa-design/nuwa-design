@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.3](https://github.com/nuwa-design/nuwa-design/compare/v0.0.2-alpha.2...v0.0.2-alpha.3) (2021-11-21)
+
+
+### Bug Fixes
+
+* 🐛 remove src files from npm script ([792cf9c](https://github.com/nuwa-design/nuwa-design/commit/792cf9c6c100e2290d20e182b9d55c73b8c230c0))
+
 ### [0.0.2-alpha.2](https://github.com/nuwa-design/nuwa-design/compare/v0.0.2-alpha.1...v0.0.2-alpha.2) (2021-11-21)
 
 
