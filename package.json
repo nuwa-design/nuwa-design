@@ -10,11 +10,12 @@
   "unpkg": "dist/umd/nuwa-design.production.min.js",
   "typings": "dist/cjs/index.d.ts",
   "directories": {
-    "lib": "lib",
+    "doc": "docs",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src",
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -22,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mjzhang1993/lerna-test.git"
+    "url": "git+https://github.com/nuwa-design/nuwa-design"
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test && jest",
