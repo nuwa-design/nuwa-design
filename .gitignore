@@ -25,6 +25,7 @@ nohup.out
 _site
 _data
 dist
+**/.umi
 report.html
 /lib
 /es
