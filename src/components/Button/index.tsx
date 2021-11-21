@@ -6,6 +6,4 @@ import Button from './Button';
 
 export type { IButtonProps } from './Button';
 
-export { default as NoteButton } from './NoteButton';
-
 export default Button;

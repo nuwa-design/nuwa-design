@@ -16,4 +16,7 @@ import { Button } from 'nuwa-design';
 export default () => <Button type="primary">按钮</Button>;
 ```
 
-More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo
+<API></API>
+
+[HTML 标准](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type)
+

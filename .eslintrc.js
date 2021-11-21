@@ -58,6 +58,7 @@ module.exports = {
         allowGlobals: true,
       },
     ],
+    'react/button-has-type': 0,
     'react/static-property-placement': 0, // static 静态类型强制定义在class 组件外
     'react/no-deprecated': 0,
     'react/jsx-no-target-blank': 0,
@@ -89,6 +90,15 @@ module.exports = {
     node: true,
   },
   settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@interfaces', './src/interfaces'],
+          ['@styles', './src/styles'],
+        ],
+        extensions: ['.ts', '.js', '.jsx', '.tsx', '.json']
+      }
+    }
     // react: {
       // version: '16.8.6',
     // },

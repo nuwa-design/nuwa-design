@@ -13,6 +13,7 @@ import babel from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
 import eslint from '@rollup/plugin-eslint';
+import alias from '@rollup/plugin-alias';
 import styles from 'rollup-plugin-styles';
 import {terser} from 'rollup-plugin-terser';
 
@@ -30,6 +31,13 @@ BABEL_ENV !== 'umd' && externalPkg.push('@babel/runtime');
 const external = id => externalPkg.some(e => id.indexOf(e) === 0);
 
 const commonPlugins = [
+    alias({
+        entries: [
+            { find: '@', replacement: 'src' },
+            { find: '@interfaces', replacement: 'src/interfaces' },
+            { find: '@styles', replacement: 'src/styles' },
+        ]
+    }),
     image(),
     eslint({fix: true, exclude: ['*.less', '*.png', '*.svg']}),
     resolve({extensions}),
