@@ -36,6 +36,7 @@ const commonPlugins = [
             { find: '@', replacement: 'src' },
             { find: '@interfaces', replacement: 'src/interfaces' },
             { find: '@styles', replacement: 'src/styles' },
+            { find: '@type', replacement: 'src/types' },
         ]
     }),
     image(),

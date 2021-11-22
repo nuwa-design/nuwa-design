@@ -1,0 +1,55 @@
+.button-variant(
+  @background,
+  @border,
+  @color: contrast(@background),
+  @hover-background: if(@color = @color-contrast-light, shade(@background, @btn-hover-bg-shade-amount), tint(@background, @btn-hover-bg-tint-amount)),
+  @hover-border: if(@color = @color-contrast-light, shade(@border, @btn-hover-border-shade-amount), tint(@border, @btn-hover-border-tint-amount)),
+  @hover-color: contrast(@hover-background),
+  @active-background: if(@color = @color-contrast-light, shade(@background, @btn-active-bg-shade-amount), tint(@background, @btn-active-bg-tint-amount)),
+  @active-border: if(@color = @color-contrast-light, shade(@border, @btn-active-border-shade-amount), tint(@border, @btn-active-border-tint-amount)),
+  @active-color: contrast(@active-background),
+  @disabled-background: @background,
+  @disabled-border: @border,
+  @disabled-color: contrast(@disabled-background)
+) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  .btn-color(@color, @background, @border);
+  .box-shadow(@btn-box-shadow);
+
+  &:hover {
+    .btn-color(@hover-color, @hover-background, @hover-border);
+  }
+
+  &:focus {
+    .btn-color(@hover-color, @hover-background, @hover-border);
+    .box-shadow(0 0 0 @btn-focus-width rgba(mix(@color, @border, 15%), .5));
+  }
+
+  &:active,
+  &.active {
+    .box-shadow(@btn-active-box-shadow);
+  }
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    opacity: @btn-disabled-opacity;
+    .box-shadow(none)
+  }
+
+}
+
+.btn-color(@color, @backgroundColor, @borderColor) {
+  color: @color;
+  background-color: @backgroundColor;
+  border-color: @borderColor;
+}
+
+.btn-size(@padding-y, @padding-x, @font-size, @border-radius) {
+  padding: @padding-y @padding-x;
+  .font-size(@font-size);
+  .border-radius(@border-radius)
+}
+

@@ -95,6 +95,7 @@ module.exports = {
         map: [
           ['@interfaces', './src/interfaces'],
           ['@styles', './src/styles'],
+          ['@type', './src/types'],
         ],
         extensions: ['.ts', '.js', '.jsx', '.tsx', '.json']
       }

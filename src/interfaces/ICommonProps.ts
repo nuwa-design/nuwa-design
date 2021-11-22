@@ -7,8 +7,8 @@
 import React from 'react';
 
 export interface ICommonProps {
-    /** 自定义 className */
-    className?: string;
-    /** 自定义 children 组件 */
-    children?: React.ReactNode;
+  /** 自定义 className */
+  className?: string;
+  /** 自定义 children 组件 */
+  children?: React.ReactNode;
 }

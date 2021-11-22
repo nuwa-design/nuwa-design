@@ -7,16 +7,19 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { ICommonProps } from '@interfaces/ICommonProps';
+import { ThemeColor } from '@type/index';
 import './style/index.less';
 
-export type BtnType = 'contained' | 'outlined' | 'text';
+export type BtnType = 'basic' | 'outlined' | 'square' | 'text';
 
 export type BtnSize = 'large' | 'small' | 'medium';
 
 export type BtnHtmlType = 'button' | 'submit' | 'reset';
 
 export interface IButtonProps extends ICommonProps {
-  /** 设置按钮类型类型 */
+  /** 设置按钮角色类型 */
+  type?: ThemeColor;
+  /** 设置按钮行为类型 */
   btnType?: BtnType;
   /** 设置按钮原生类型，可选值请参考 HTML 标准 */
   htmlType?: BtnHtmlType;
@@ -33,11 +36,12 @@ export interface IButtonProps extends ICommonProps {
 }
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
-  const { btnType, htmlType, size, block, loading, className, children, onClick } = props;
+  const { type, btnType, htmlType, size, block, loading, className, children, onClick } = props;
 
   const innerCls: string = classNames(
-    'nuwa-btn',
+    'nuwa_btn',
     {
+      [`nuwa_btn-${type}`]: type,
       [`nuwa_btn-${btnType}`]: btnType,
       [`nuwa_btn-${size}`]: size,
       [`nuwa_btn-loading`]: loading,
@@ -53,7 +57,8 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
 };
 
 Button.defaultProps = {
-  btnType: 'contained',
+  type: 'primary',
+  btnType: 'basic',
   htmlType: 'button',
   size: 'medium',
   block: false,

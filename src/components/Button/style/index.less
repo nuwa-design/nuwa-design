@@ -1,8 +1,33 @@
 @import '../../../styles/index';
+@import './mixins/index';
 
-@btn-prefix-cls: ~'@{nuwa-prefix}-btn';
-
+@btn-prefix-cls: ~'@{nuwa-prefix}_btn';
 
 .@{btn-prefix-cls} {
-  line-height: 30px;
+  display: inline-block;
+  font-family: @btn-font-family;
+  font-weight: @btn-font-weight;
+  line-height: @btn-line-height;
+  color: @body-color;
+  text-align: center;
+  white-space: @btn-white-space;
+  vertical-align: middle;
+  align-items: center;
+  cursor: if(@enable-button-pointers, pointer, null);
+  user-select: none;
+  background-color: transparent;
+  border: @btn-border-width solid transparent;
+  .btn-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius);
+  .transition(@btn-transition);
+
+  &:focus {
+    box-shadow: none !important;
+  }
+  outline: none !important;
+
+  each(@theme-colors, {
+    &.@{btn-prefix-cls}-@{key} {
+      .button-variant(@value[base], @value[base]);
+    }
+  });
 }

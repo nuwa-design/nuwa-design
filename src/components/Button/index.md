@@ -13,7 +13,13 @@ Demo:
 import React from 'react';
 import { Button } from 'nuwa-design';
 
-export default () => <Button type="primary">按钮</Button>;
+export default () => <>
+  <Button type="primary">Primary</Button> &nbsp;
+  <Button type="success">Success</Button>&nbsp;
+  <Button type="danger">Danger</Button>&nbsp;
+  <Button type="info">Info</Button>&nbsp;
+  <Button type="warning">Warning</Button>&nbsp;
+</>;
 ```
 
 <API></API>
