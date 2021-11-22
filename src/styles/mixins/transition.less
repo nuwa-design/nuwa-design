@@ -1,0 +1,7 @@
+.transition(@transition) when (length(@transition) = 0) {
+  transition: @transition-base;
+}
+
+.transition(@transition) when (length(@transition) >= 1) {
+  transition: @transition;
+}

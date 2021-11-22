@@ -45,6 +45,7 @@
      "paths": {                               /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
        "@interfaces/*": ["src/interfaces/*"],
        "@styles/*": ["src/styles/*"],
+       "@type/*": ["src/types/*"]
      },
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* 这个设置仅对 通过 npm 安装的声明模块有效（node_modules/@types/ 下的声明文件 ），用户自定义的声明文件无关 */
