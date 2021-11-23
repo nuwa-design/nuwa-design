@@ -30,19 +30,24 @@
     border: 1px solid @btn-secondary-border-color;
     color: @secondary[inverse];
 
-    &:focus,
-    &.active,
-    &:active,
-    &:hover {
-      color: @secondary[inverse];
-      border-color: @btn-secondary-hover-border-color;
-      background-color: @btn-secondary-hover-bg-color;
-    }
-
     &.@{btn-prefix-cls}-link {
       background-color: transparent;
       color: @secondary[inverse];
-      border: none;
+      border: 1px solid transparent;
+    }
+
+    &:not(.disabled):not(:disabled) {
+      &:focus,
+      &.active,
+      &:active,
+      &:hover,
+      &.@{btn-prefix-cls}-link:not(.disabled):not(:disabled):focus,
+      &.@{btn-prefix-cls}-link:active,
+      &.@{btn-prefix-cls}-link.active,
+      &.@{btn-prefix-cls}-link:hover {
+        color: @secondary[inverse];
+        background-color: @btn-secondary-hover-bg-color;
+      }
     }
   }
 

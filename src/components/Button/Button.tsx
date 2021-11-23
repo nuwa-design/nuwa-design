@@ -81,10 +81,10 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
       [`${NUWA_PREFIX}_btn-${realSize}`]: size && ElementSizeArr.includes(size) && size !== 'medium' && realSize,
       [`${NUWA_PREFIX}_btn-link`]: btnType === 'link',
       [`${NUWA_PREFIX}_btn-icon`]: iconOnly,
+      [`${NUWA_PREFIX}-block`]: block,
       disabled: disabled && !active,
       active: active && !disabled,
     },
-    `${NUWA_PREFIX}_btn-${block ? 'block' : 'inline'}`,
   );
 
   return (
