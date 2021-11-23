@@ -6,13 +6,13 @@
  */
 
 describe('Test Button', () => {
-    it('test case1', () => {
-        expect({a: 1}).toStrictEqual({a: 1})//判断两个对象是否相等
-    })
-    it('test case2', () => {
-        expect({a: 1}).toStrictEqual({a: 1})//判断两个对象是否相等
-    })
-    it('test case3', () => {
-        expect({a: 1}).toStrictEqual({a: 1})//判断两个对象是否相等
-    })
-})
+  it('test case1', () => {
+    expect({ a: 1 }).toStrictEqual({ a: 1 });//判断两个对象是否相等
+  });
+  it('test case2', () => {
+    expect({ a: 1 }).toStrictEqual({ a: 1 });//判断两个对象是否相等
+  });
+  it('test case3', () => {
+    expect({ a: 1 }).toStrictEqual({ a: 1 });//判断两个对象是否相等
+  });
+});

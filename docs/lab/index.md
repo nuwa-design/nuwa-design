@@ -1,8 +1,6 @@
 ---
 nav:
- title: 实验室
- order: 3
-sidemenu: false
+title: 实验室 order: 3 sidemenu: false
 ---
 
 <Alert>

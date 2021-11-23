@@ -56,6 +56,8 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "@rollup/plugin-alias": "^3.1.8",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -90,10 +92,11 @@
     "git-cz": "^4.8.0",
     "jest": "^27.3.1",
     "jest-enzyme": "^7.1.2",
-    "less": "^4.0.0",
+    "less": "3.10.3",
     "lint-staged": "^10.5.3",
     "postcss": "^8.2.2",
     "prettier": "^2.2.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
@@ -107,6 +110,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "classnames": "^2.3.1"
   },
   "peerDependencies": {

@@ -1,0 +1,150 @@
+/**
+  Button Styles
+ */
+.@{btn-prefix-cls} {
+  display: inline-block;
+  font-family: @btn-font-family;
+  font-weight: @btn-font-weight;
+  line-height: @btn-line-height;
+  color: @body-color;
+  text-align: center;
+  white-space: @btn-white-space;
+  vertical-align: middle;
+  align-items: center;
+  cursor: if(@enable-button-pointers, pointer, null);
+  user-select: none;
+  background-color: transparent;
+  border: @btn-border-width solid transparent;
+  .btn-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius);
+  .transition(@btn-transition);
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  outline: none !important;
+
+  each(@theme-colors, {
+    @base: @value[base];
+    @inverse: @value[inverse];
+
+    &.@{btn-prefix-cls}-@{key} {
+      .button-variant(@base, @base);
+    }
+
+    &.@{btn-prefix-cls}-outlined-@{key} {
+      .button-outline-variant(@base);
+    }
+
+    &.@{btn-prefix-cls}-hover-@{key} {
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled):hover {
+        color: @inverse;
+        background-color: @base;
+        border-color: @base;
+      }
+    }
+
+    &.@{btn-prefix-cls}-outlined-hover-@{key} {
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled):hover {
+        color: @base;
+        border-color: @base;
+        background-color: transparent;
+      }
+    }
+  });
+
+  &-secondary,
+  &-outlined-secondary {
+    background-color: transparent;
+    border: 1px solid @btn-secondary-border-color;
+    color: @secondary[inverse];
+
+    &:focus,
+    &.active,
+    &:active,
+    &:hover {
+      color: @secondary[inverse];
+      border-color: @btn-secondary-hover-border-color;
+      background-color: @btn-secondary-hover-bg-color;
+    }
+  }
+
+  &-lg {
+    .btn-size(@btn-padding-y-lg, @btn-padding-x-lg, @btn-font-size-lg, @btn-border-radius-lg);
+  }
+
+  &-sm {
+    .btn-size(@btn-padding-y-sm, @btn-padding-x-sm, @btn-font-size-sm, @btn-border-radius-sm);
+  }
+
+  &-square {
+    border-radius: @btn-shape-square-radius;
+  }
+
+  &-pill {
+    border-radius: @btn-shape-pill-radius;
+  }
+
+  &-circle {
+    border-radius: @btn-shape-circle-radius;
+  }
+
+  &-link {
+    font-weight: @font-weight-normal;
+    color: @btn-link-color;
+    text-decoration: @link-decoration;
+
+    &:not(:disabled):not(.disabled) {
+      &:hover,
+      &:focus,
+      &:active {
+        color: @btn-link-hover-color;
+        background-color: @btn-link-hover-background-color;
+        text-decoration: @link-hover-decoration;
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      color: @btn-link-disabled-color;
+    }
+  }
+
+  i, svg {
+    padding-right: 0.5rem;
+    vertical-align: middle;
+    line-height: 0;
+  }
+
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    i, svg {
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+    }
+
+    & {
+      height: @btn-icon-only-width;
+      width: @btn-icon-only-height;
+    }
+
+    &.@{btn-prefix-cls}-lg {
+      height: @btn-icon-only-width-lg;
+      width: @btn-icon-only-height-lg;
+    }
+
+    &.@{btn-prefix-cls}-sm {
+      height: @btn-icon-only-width-sm;
+      width: @btn-icon-only-height-sm;
+    }
+  }
+}

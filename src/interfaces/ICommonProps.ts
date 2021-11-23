@@ -1,6 +1,6 @@
 /**
  * @FileName src/interfaces/ICommonProps.ts
- * @Description
+ * @Description Common Component Props
  * @Author qulongjun <contact@nuwa.design>
  * @Date 2021/11/21 20:52:59
  */

@@ -1,4 +1,14 @@
+/**
+  Less Style
+ */
 
+// Variables
 @import './variable';
+// Mixins
 @import './mixins/index';
-@import './themes/index';
+// Theme
+@import ~'./themes/@{current-theme}/index.less';
+
+:export {
+  nuwaPrefix: @nuwa-prefix;
+}

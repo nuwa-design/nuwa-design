@@ -5,18 +5,26 @@
  * @Date 2021/11/21 21:45:48
  */
 import * as React from 'react';
+import propTypes from 'prop-types';
 import classNames from 'classnames';
 import { ICommonProps } from '@interfaces/ICommonProps';
-import { ThemeColor } from '@type/index';
+import { getGlobalStyleConfig } from '../../utils';
+import {
+  ThemeColor,
+  ElementSize,
+  BtnShape,
+  BtnType,
+  BtnHtmlType,
+  ElementSizeArr,
+  ThemeColorArr,
+  BtnTypeArr,
+  BtnHtmlTypeArr,
+  BtnShapeArr,
+} from '../../types';
+import { SizeMap } from '../../configs';
 import './style/index.less';
 
-export type BtnType = 'basic' | 'outlined' | 'square' | 'text';
-
-export type BtnSize = 'large' | 'small' | 'medium';
-
-export type BtnHtmlType = 'button' | 'submit' | 'reset';
-
-export type BtnShape = 'round' | 'square' | 'circle' | 'pill';
+const NUWA_PREFIX = getGlobalStyleConfig().nuwaPrefix;
 
 export interface IButtonProps extends ICommonProps {
   /** 设置按钮样式类型 */
@@ -30,30 +38,53 @@ export interface IButtonProps extends ICommonProps {
   /** 设置按钮原生类型，可选值请参考 HTML 标准 */
   htmlType?: BtnHtmlType;
   /** 设置按钮大小 */
-  size?: BtnSize;
+  size?: ElementSize;
   /** 是否显示为块状布局 */
   block?: boolean;
   /** 是否显示为禁用状态 */
   disabled?: boolean;
-  /** 是否显示为加载状态 */
-  loading?: boolean;
+  /** 是否显示为激活状态 */
+  active?: boolean;
+  /** 是否显示为仅图标按钮 */
+  iconOnly?: boolean;
   /** 按钮点击事件, event: 点击响应事件 */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
-  const { type, hoverType, btnType, btnShape, htmlType, size, block, loading, className, children, onClick } = props;
+  const {
+    type,
+    hoverType,
+    btnType,
+    btnShape,
+    htmlType,
+    size,
+    block,
+    disabled,
+    iconOnly,
+    active,
+    className,
+    children,
+    onClick,
+  } = props;
+
+  const realSize = typeof size === 'string' ? SizeMap[size] : null;
 
   const innerCls: string = classNames(
     'nuwa_btn',
     {
-      [`nuwa_btn-${btnType !== 'basic' ? `${btnType}-` : ``}${type}`]: type,
-      [`nuwa_btn-${btnType !== 'basic' ? `${btnType}-` : ``}hover-${hoverType}`]: hoverType,
-      [`nuwa_btn-${btnShape}`]: btnShape !== 'round',
-      [`nuwa_btn-${size}`]: size,
-      [`nuwa_btn-loading`]: loading,
+      [`${NUWA_PREFIX}_btn-${!['basic'].includes(btnType as string) ? `${btnType}-` : ``}${type}`]:
+        type && btnType !== 'link' && ThemeColorArr.includes(type),
+      [`${NUWA_PREFIX}_btn-${btnType !== 'basic' ? `${btnType}-` : ``}hover-${hoverType}`]:
+        hoverType && ThemeColorArr.includes(hoverType),
+      [`${NUWA_PREFIX}_btn-${btnShape}`]: btnShape && BtnShapeArr.includes(btnShape) && btnShape !== 'round',
+      [`${NUWA_PREFIX}_btn-${realSize}`]: size && ElementSizeArr.includes(size) && size !== 'medium' && realSize,
+      [`${NUWA_PREFIX}_btn-link`]: btnType === 'link',
+      [`${NUWA_PREFIX}_btn-icon`]: iconOnly,
+      disabled: disabled && !active,
+      active: active && !disabled,
     },
-    `nuwa_btn-${block ? 'block' : 'inline'}`,
+    `${NUWA_PREFIX}_btn-${block ? 'block' : 'inline'}`,
   );
 
   return (
@@ -61,6 +92,20 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
       {children}
     </button>
   );
+};
+
+Button.propTypes = {
+  type: propTypes.oneOf(ThemeColorArr),
+  hoverType: propTypes.oneOf(ThemeColorArr),
+  btnShape: propTypes.oneOf(BtnShapeArr),
+  btnType: propTypes.oneOf(BtnTypeArr),
+  htmlType: propTypes.oneOf(BtnHtmlTypeArr),
+  size: propTypes.oneOf(ElementSizeArr),
+  block: propTypes.bool,
+  disabled: propTypes.bool,
+  active: propTypes.bool,
+  iconOnly: propTypes.bool,
+  onClick: propTypes.func,
 };
 
 Button.defaultProps = {
@@ -71,7 +116,7 @@ Button.defaultProps = {
   size: 'medium',
   block: false,
   disabled: false,
-  loading: false,
+  iconOnly: false,
 };
 
 export default Button;

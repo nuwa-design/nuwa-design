@@ -5,13 +5,22 @@
  * @Date 2021/11/22 15:15:02
  */
 
-export type ThemeColor =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
-  | 'brand'
-  | 'light'
-  | 'dark';
+export const ThemeColorArr = [
+  'primary',
+  'secondary',
+  'success',
+  'info',
+  'warning',
+  'danger',
+  'brand',
+  'light',
+  'dark',
+] as const;
+
+export const ElementSizeArr = ['medium', 'small', 'large'];
+
+export type ThemeColor = typeof ThemeColorArr[number];
+
+export type ElementSize = typeof ElementSizeArr[number];
+
+export * from './button';
