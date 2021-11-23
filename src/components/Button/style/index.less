@@ -17,6 +17,7 @@
   user-select: none;
   background-color: transparent;
   border: @btn-border-width solid transparent;
+
   .btn-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius);
   .transition(@btn-transition);
 
@@ -29,5 +30,57 @@
     &.@{btn-prefix-cls}-@{key} {
       .button-variant(@value[base], @value[base]);
     }
+
+    &.@{btn-prefix-cls}-outlined-@{key} {
+      .button-outline-variant(@value[base]);
+    }
+
+    &.@{btn-prefix-cls}-hover-@{key} {
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled):hover {
+        color: @value[inverse];
+        background-color:@value[base];
+        border-color: @value[base];
+      }
+    }
+
+    &.@{btn-prefix-cls}-outlined-hover-@{key} {
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled):hover {
+        color: @value[base];
+        border-color: @value[base];
+        background-color: transparent;
+      }
+    }
   });
+
+  &-secondary,
+  &-outlined-secondary {
+    background-color: transparent;
+    border: 1px solid @btn-secondary-border-color;
+    color: @secondary[inverse];
+
+    &:focus,
+    &.active,
+    &:active,
+    &:hover {
+      color: @secondary[inverse];
+      border-color: @btn-secondary-hover-border-color;
+      background-color: @btn-secondary-hover-bg-color;
+    }
+  }
+
+  &-square {
+    border-radius: @btn-shape-square-radius;
+  }
+
+  &-pill {
+    border-radius: @btn-shape-pill-radius;
+  }
+
+  &-circle {
+    border-radius: @btn-shape-circle-radius;
+  }
 }

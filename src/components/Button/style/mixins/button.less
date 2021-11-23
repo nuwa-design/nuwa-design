@@ -16,19 +16,13 @@
   background-color: @background;
   border-color: @border;
   .btn-color(@color, @background, @border);
-  .box-shadow(@btn-box-shadow);
 
-  &:hover {
+  &:not(:disabled):not(.disabled):hover {
     .btn-color(@hover-color, @hover-background, @hover-border);
   }
 
-  &:focus {
-    .btn-color(@hover-color, @hover-background, @hover-border);
-    .box-shadow(0 0 0 @btn-focus-width rgba(mix(@color, @border, 15%), .5));
-  }
-
-  &:active,
-  &.active {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
     .box-shadow(@btn-active-box-shadow);
   }
 
@@ -38,7 +32,40 @@
     opacity: @btn-disabled-opacity;
     .box-shadow(none)
   }
+}
 
+.button-outline-variant(
+@color,
+@color-hover: contrast(@color),
+@active-background: @color,
+@active-border: @color,
+@active-color: contrast(@active-background)
+) {
+  color: @color;
+  border-color: @color;
+
+  &:hover {
+    color: @color-hover;
+    background-color: @active-background;
+    border-color: @active-border;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 @btn-focus-width rgba($color, .5);
+  }
+
+  &:active,
+  &.active {
+    color: @active-color;
+    background-color: @active-background;
+    border-color: @active-border;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: @color;
+    background-color: transparent;
+  }
 }
 
 .btn-color(@color, @backgroundColor, @borderColor) {
