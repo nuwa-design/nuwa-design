@@ -73,8 +73,8 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
   const innerCls: string = classNames(
     'nuwa_btn',
     {
-      [`${NUWA_PREFIX}_btn-${!['basic'].includes(btnType as string) ? `${btnType}-` : ``}${type}`]:
-        type && btnType !== 'link' && ThemeColorArr.includes(type),
+      [`${NUWA_PREFIX}_btn-${btnType && btnType === 'outlined' ? `${btnType}-` : ``}${type}`]:
+        type && ThemeColorArr.includes(type),
       [`${NUWA_PREFIX}_btn-${btnType !== 'basic' ? `${btnType}-` : ``}hover-${hoverType}`]:
         hoverType && ThemeColorArr.includes(hoverType),
       [`${NUWA_PREFIX}_btn-${btnShape}`]: btnShape && BtnShapeArr.includes(btnShape) && btnShape !== 'round',

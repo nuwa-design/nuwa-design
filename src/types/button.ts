@@ -5,7 +5,7 @@
  * @Date 2021/11/23 15:11:38
  */
 
-export const BtnTypeArr = ['basic', 'outlined', 'square', 'link'] as const;
+export const BtnTypeArr = ['basic', 'outlined', 'link'] as const;
 export const BtnHtmlTypeArr = ['button', 'submit', 'reset'] as const;
 export const BtnShapeArr = ['round', 'square', 'circle', 'pill'] as const;
 
