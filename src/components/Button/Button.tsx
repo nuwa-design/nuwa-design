@@ -7,7 +7,7 @@
 import * as React from 'react';
 import propTypes from 'prop-types';
 import classNames from 'classnames';
-import { ICommonProps } from '@interfaces/ICommonProps';
+import { ICommonProps } from '../../interfaces/ICommonProps';
 import { getGlobalStyleConfig } from '../../utils';
 import {
   ThemeColor,

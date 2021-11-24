@@ -249,8 +249,6 @@ exports[`Button should handle fragment as children 1`] = `
 </Button>
 `;
 
-exports[`Button should not set error customTag 1`] = `null`;
-
 exports[`Button should render empty button without errors 1`] = `
 <button
   class="nuwa_btn nuwa_btn-primary"

@@ -56,12 +56,15 @@ describe('Button', () => {
   });
 
   it('should not set error customTag', () => {
-    const wrapper = mount(
+    const mockWarn = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(mockWarn);
+    render(
       <Button disabled customTag={null as any}>
         button
       </Button>,
     );
-    expect(wrapper.render()).toMatchSnapshot();
+    expect(mockWarn).toHaveBeenCalledTimes(1);
+    expect(mockWarn.mock.calls[0][0]).toMatch(`unreachable customTag:null`);
   });
 
   it('warns if size is wrong', () => {

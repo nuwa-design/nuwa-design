@@ -16,11 +16,12 @@ import eslint from '@rollup/plugin-eslint';
 import alias from '@rollup/plugin-alias';
 import styles from 'rollup-plugin-styles';
 import { terser } from 'rollup-plugin-terser';
+import cssnano from 'cssnano';
 
 import autoprefixer from 'autoprefixer';
 
 const entryFile = 'src/index.ts';
-const BABEL_ENV = process.env.BABEL_ENV || 'umd';
+const BABEL_ENV = process.env.BABEL_ENV;
 const extensions = [ '.js', '.ts', '.tsx', '.less' ];
 const globals = { react: 'React', 'react-dom': 'ReactDOM' };
 const componentDir = 'src/components';
@@ -33,12 +34,6 @@ const external = id => externalPkg.some(e => id.indexOf(e) === 0);
 const commonPlugins = [
   alias({
     entries: [
-      { find: '@', replacement: 'src' },
-      { find: '@interfaces', replacement: 'src/interfaces' },
-      { find: '@styles', replacement: 'src/styles' },
-      { find: '@type', replacement: 'src/types' },
-      { find: '@enums', replacement: 'src/enums' },
-      { find: '@utils', replacement: 'src/utils' },
     ],
   }),
   image(),
@@ -68,7 +63,7 @@ const stylePluginConfig = {
   url: {
     inline: true,
   },
-  plugins: [ autoprefixer({ env: BABEL_ENV }) ],
+  plugins: [ autoprefixer({ env: BABEL_ENV }), cssnano() ],
 };
 const umdOutput = {
   format: 'umd',
@@ -100,18 +95,18 @@ const esStylePluginConfig = {
 };
 
 export default () => {
-  switch ( BABEL_ENV ) {
+  switch (BABEL_ENV) {
     case 'umd':
       return [ {
-        input: entryFile,
-        output: { ...umdOutput, file: 'dist/umd/nuwa-design.development.js' },
-        external,
-        plugins: [ styles(stylePluginConfig), ...commonPlugins ],
+          input: entryFile,
+          output: { ...umdOutput, file: 'dist/umd/nuwa-design.development.js' },
+          external,
+          plugins: [ styles(stylePluginConfig), ...commonPlugins ],
       }, {
-        input: entryFile,
-        output: { ...umdOutput, file: 'dist/umd/nuwa-design.production.min.js', plugins: [ terser() ] },
-        external,
-        plugins: [ styles({ ...stylePluginConfig, minimize: true }), ...commonPlugins ],
+          input: entryFile,
+          output: { ...umdOutput, file: 'dist/umd/nuwa-design.production.min.js', plugins: [ terser() ] },
+          external,
+          plugins: [ styles({ ...stylePluginConfig, minimize: true }), ...commonPlugins ],
       } ];
     case 'esm':
       return {
@@ -123,7 +118,7 @@ export default () => {
       };
     case 'cjs':
       return {
-        input: [ entryFile, ...componentEntryFiles ],
+        input:  [ entryFile, ...componentEntryFiles ],
         preserveModules: true, // rollup-plugin-styles 还是需要使用
         output: { ...esOutput, dir: 'dist/cjs', format: 'cjs' },
         external,

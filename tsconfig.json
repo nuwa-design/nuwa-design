@@ -20,7 +20,7 @@
     // "declaration": true,                      /* 生成对应的 '.d.ts' 文件，默认位置与 .ts 文件相同 */
     // "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
     // "sourceMap": true,                     /* Generates corresponding '.map' file. */
-    // "outFile": "./",                       /* Concatenate and emit output to single file. */
+//     "outFile": "./",                       /* Concatenate and emit output to single file. */
     // "outDir": "./dist",                        /* Redirect output structure to the directory. */
     // "rootDir": "./src",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                     /* Enable project compilation */
@@ -62,21 +62,6 @@
     /* Base directory to resolve non-absolute module names. */
     "paths": {
       /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
-      "@interfaces/*": [
-        "src/interfaces/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@type/*": [
-        "src/types/*"
-      ],
-      "@enums/*": [
-        "src/enums/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ]
     },
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* 这个设置仅对 通过 npm 安装的声明模块有效（node_modules/@types/ 下的声明文件 ），用户自定义的声明文件无关 */

@@ -92,13 +92,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       alias: {
-        map: [
-          [ '@interfaces', './src/interfaces' ],
-          [ '@styles', './src/styles' ],
-          [ '@type', './src/types' ],
-          [ '@enums', './src/enums' ],
-          [ '@utils', './src/utils' ],
-        ],
+        map: [],
         extensions: [ '.ts', '.js', '.jsx', '.tsx', '.json' ],
       },
     },
