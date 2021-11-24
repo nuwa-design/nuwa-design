@@ -1,7 +1,18 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.2](https://github.com/nuwa-design/nuwa-design/compare/v0.0.2-alpha.3...v0.0.2) (2021-11-24)
+
+
+### Features
+
+* 🎸 Button Component Finished ([#1](https://github.com/nuwa-design/nuwa-design/issues/1)) ([478fc39](https://github.com/nuwa-design/nuwa-design/commit/478fc392ef2a0a86cb43811d5c48e0ac349f46f0))
+
+
+### Docs
+
+* ✏️ update guide ([4df86e4](https://github.com/nuwa-design/nuwa-design/commit/4df86e454ecb8811bd50ae310bf01a70c0350407))
 
 ### [0.0.2-alpha.3](https://github.com/nuwa-design/nuwa-design/compare/v0.0.2-alpha.2...v0.0.2-alpha.3) (2021-11-21)
 
