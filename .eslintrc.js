@@ -5,7 +5,7 @@ const commitRules = {
   'no-console': [
     'error',
     {
-      allow: ['warn', 'error'],
+      allow: [ 'warn', 'error' ],
     },
   ],
   'no-unused-vars': 2,
@@ -27,7 +27,7 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
-    }
+    },
   },
   globals: {
     React: true,
@@ -37,14 +37,14 @@ module.exports = {
   },
   rules: {
     // javascript
-    'brace-style': [2, '1tbs', { allowSingleLine: true }],
-    'block-spacing': [2, 'always'],
+    'brace-style': [ 2, '1tbs', { allowSingleLine: true } ],
+    'block-spacing': [ 2, 'always' ],
     'no-const-assign': 2,
     'prefer-destructuring': 0, // 推荐通过结构赋值访问 object 或者 array
     'no-prototype-builtins': 0,
     'no-useless-escape': 0,
     'no-unused-expressions': 2, // 开启对短路求值和三元表达式的支持
-    'no-console': [2, { allow: ['warn', 'error', 'log'] }],
+    'no-console': [ 2, { allow: [ 'warn', 'error', 'log' ] } ],
     'no-nested-ternary': 2, // 禁止三元表达式嵌套
     // jsx
     'jsx-a11y/anchor-is-valid': 0,
@@ -58,10 +58,11 @@ module.exports = {
         allowGlobals: true,
       },
     ],
+    'react/button-has-type': 0,
     'react/static-property-placement': 0, // static 静态类型强制定义在class 组件外
     'react/no-deprecated': 0,
     'react/jsx-no-target-blank': 0,
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }], // 识别扩展名
+    'react/jsx-filename-extension': [ 1, { extensions: [ '.js', '.jsx', '.ts', '.tsx' ] } ], // 识别扩展名
     'react/jsx-props-no-spreading': 0, // 禁止 jsx 组件上使用 <button {...props} />
     'react/no-array-index-key': 2, // 禁止使用遍历中的 index 作为 key, 通过重新命名变量避开 const count = idx;
     'react/require-default-props': 0, // 强制给 默认值
@@ -69,7 +70,7 @@ module.exports = {
     'import/no-unresolved': [
       2,
       // {
-      //   ignore: [], // 忽视对 webpack.alias 模块的 eslint 模块索引报错
+      //   ignore: ['demo/*'], // 忽视对 webpack.alias 模块的 eslint 模块索引报错
       // },
     ],
     '@typescript-eslint/camelcase': 0,
@@ -82,15 +83,27 @@ module.exports = {
         },
       },
     ],
-    ...(process.env.ESLINT_ENV === 'commit' ? commitRules : {})
+    ...(process.env.ESLINT_ENV === 'commit' ? commitRules : {}),
   },
   env: {
     browser: true,
     node: true,
   },
   settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          [ '@interfaces', './src/interfaces' ],
+          [ '@styles', './src/styles' ],
+          [ '@type', './src/types' ],
+          [ '@enums', './src/enums' ],
+          [ '@utils', './src/utils' ],
+        ],
+        extensions: [ '.ts', '.js', '.jsx', '.tsx', '.json' ],
+      },
+    },
     // react: {
-      // version: '16.8.6',
+    // version: '16.8.6',
     // },
   },
 };

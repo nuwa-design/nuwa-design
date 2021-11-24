@@ -1,7 +1,7 @@
 ---
 nav:
- title: 实验室
- order: 3
+ title: 实验室 
+ order: 4
 sidemenu: false
 ---
 

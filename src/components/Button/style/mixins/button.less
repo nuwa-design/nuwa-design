@@ -1,0 +1,92 @@
+/**
+  Button mixin
+ */
+
+.button-variant(
+  @background,
+  @border,
+  @color: contrast(@background),
+  @hover-background: if(@color = @color-contrast-light, shade(@background, @btn-hover-bg-shade-amount), tint(@background, @btn-hover-bg-tint-amount)),
+  @hover-border: if(@color = @color-contrast-light, shade(@border, @btn-hover-border-shade-amount), tint(@border, @btn-hover-border-tint-amount)),
+  @hover-color: contrast(@hover-background),
+  @active-background: if(@color = @color-contrast-light, shade(@background, @btn-active-bg-shade-amount), tint(@background, @btn-active-bg-tint-amount)),
+  @active-border: if(@color = @color-contrast-light, shade(@border, @btn-active-border-shade-amount), tint(@border, @btn-active-border-tint-amount)),
+  @active-color: contrast(@active-background),
+  @disabled-background: @background,
+  @disabled-border: @border,
+  @disabled-color: contrast(@disabled-background)
+) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+  .btn-color(@color, @background, @border);
+
+  &:not(:disabled):not(.disabled):hover {
+    .btn-color(@hover-color, @hover-background, @hover-border);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    .box-shadow(@btn-active-box-shadow);
+    color: @active-color;
+    background-color: @active-background;
+    border-color: @active-border;
+  }
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    opacity: @btn-disabled-opacity;
+    .box-shadow(none);
+  }
+}
+
+.button-outline-variant(
+  @color,
+  @color-hover: contrast(@color),
+  @active-background: @color,
+  @active-border: @color,
+  @active-color: contrast(@active-background)
+) {
+  color: @color;
+  border-color: @color;
+
+  &:hover {
+    color: @color-hover;
+    background-color: @active-background;
+    border-color: @active-border;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 @btn-focus-width rgba($color, .5);
+  }
+
+  &:active,
+  &.active {
+    color: @active-color;
+    background-color: @active-background;
+    border-color: @active-border;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: @color;
+    background-color: transparent;
+    pointer-events: none;
+    opacity: @btn-disabled-opacity;
+    .box-shadow(none);
+  }
+}
+
+.btn-color(@color, @backgroundColor, @borderColor) {
+  color: @color;
+  background-color: @backgroundColor;
+  border-color: @borderColor;
+}
+
+.btn-size(@padding-y, @padding-x, @font-size, @border-radius) {
+  padding: @padding-y @padding-x;
+  .font-size(@font-size);
+  .border-radius(@border-radius)
+}
+

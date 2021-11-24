@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render icon correctly 1`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={false}
+  size="medium"
+  type="primary"
+>
+  Button
+</Button>
+`;
+
+exports[`Button render icon correctly 2`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={false}
+  size="medium"
+  type="primary"
+>
+  <FontAwesomeIcon
+    border={false}
+    className=""
+    fixedWidth={false}
+    flip={null}
+    icon={
+      Object {
+        "icon": Array [
+          512,
+          512,
+          Array [],
+          "f02b",
+          "M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z",
+        ],
+        "iconName": "tag",
+        "prefix": "fas",
+      }
+    }
+    inverse={false}
+    listItem={false}
+    mask={null}
+    pull={null}
+    pulse={false}
+    rotation={null}
+    size={null}
+    spin={false}
+    swapOpacity={false}
+    symbol={false}
+    title=""
+    transform={null}
+  />
+  Button
+</Button>
+`;
+
+exports[`Button render icon correctly 3`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={false}
+  size="medium"
+  type="primary"
+>
+  Button
+  <FontAwesomeIcon
+    border={false}
+    className=""
+    fixedWidth={false}
+    flip={null}
+    icon={
+      Object {
+        "icon": Array [
+          512,
+          512,
+          Array [],
+          "f02b",
+          "M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z",
+        ],
+        "iconName": "tag",
+        "prefix": "fas",
+      }
+    }
+    inverse={false}
+    listItem={false}
+    mask={null}
+    pull={null}
+    pulse={false}
+    rotation={null}
+    size={null}
+    spin={false}
+    swapOpacity={false}
+    symbol={false}
+    title=""
+    transform={null}
+  />
+</Button>
+`;
+
+exports[`Button render icon correctly 4`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={false}
+  size="medium"
+  type="primary"
+>
+  <i
+    className="fa fa-tag"
+  />
+  Button
+</Button>
+`;
+
+exports[`Button render icon correctly 5`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={false}
+  size="medium"
+  type="primary"
+>
+  Button
+  <i
+    className="fa fa-tag"
+  />
+</Button>
+`;
+
+exports[`Button render icon correctly 6`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={true}
+  size="medium"
+  type="primary"
+>
+  <i
+    className="fa fa-tag"
+  />
+</Button>
+`;
+
+exports[`Button render icon correctly 7`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={true}
+  size="medium"
+  type="primary"
+>
+  <FontAwesomeIcon
+    border={false}
+    className=""
+    fixedWidth={false}
+    flip={null}
+    icon={
+      Object {
+        "icon": Array [
+          512,
+          512,
+          Array [],
+          "f02b",
+          "M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z",
+        ],
+        "iconName": "tag",
+        "prefix": "fas",
+      }
+    }
+    inverse={false}
+    listItem={false}
+    mask={null}
+    pull={null}
+    pulse={false}
+    rotation={null}
+    size={null}
+    spin={false}
+    swapOpacity={false}
+    symbol={false}
+    title=""
+    transform={null}
+  />
+</Button>
+`;
+
+exports[`Button renders correctly 1`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={false}
+  size="medium"
+  type="primary"
+>
+  Follow
+</Button>
+`;
+
+exports[`Button should handle fragment as children 1`] = `
+<Button
+  block={false}
+  btnShape="round"
+  btnType="basic"
+  customTag="button"
+  disabled={false}
+  htmlType="button"
+  iconOnly={false}
+  size="medium"
+  type="primary"
+>
+  <button
+    className="nuwa_btn nuwa_btn-primary"
+    type="button"
+  >
+    text
+  </button>
+</Button>
+`;
+
+exports[`Button should not set error customTag 1`] = `null`;
+
+exports[`Button should render empty button without errors 1`] = `
+<button
+  class="nuwa_btn nuwa_btn-primary"
+  type="button"
+/>
+`;
