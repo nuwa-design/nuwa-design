@@ -1,6 +1,10 @@
 ---
-title: 快速上手 order: 1 toc: menu nav:
-title: 指南 order: 1
+title: 快速上手 
+order: 1 
+toc: menu 
+nav:
+ title: 指南 
+ order: 2
 ---
 
 # 快速上手

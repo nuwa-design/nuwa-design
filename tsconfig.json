@@ -112,6 +112,7 @@
     // 指定不需要编译的文件
     "node_modules",
     "dist/**/*",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/demo/*"
   ]
 }

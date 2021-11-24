@@ -70,7 +70,7 @@ module.exports = {
     'import/no-unresolved': [
       2,
       // {
-      //   ignore: [], // 忽视对 webpack.alias 模块的 eslint 模块索引报错
+      //   ignore: ['demo/*'], // 忽视对 webpack.alias 模块的 eslint 模块索引报错
       // },
     ],
     '@typescript-eslint/camelcase': 0,

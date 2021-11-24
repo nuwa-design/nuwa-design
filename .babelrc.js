@@ -33,7 +33,7 @@ module.exports = function(api) {
     '@babel/preset-typescript',
   ];
   const plugins = [
-    [ '@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true } ],
+    [ '@babel/plugin-proposal-decorators', { decoratorsBeforeExport: false } ],
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-proposal-function-sent',
     '@babel/plugin-proposal-export-namespace-from',

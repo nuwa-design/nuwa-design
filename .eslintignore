@@ -1,5 +1,7 @@
 node-modules/**/*
 dist/**/*
+src/**/demo/*
+src/**/__tests_/*
 .eslintrc.js
 lint-staged.config.js
 .babelrc.js

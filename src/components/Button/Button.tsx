@@ -41,12 +41,14 @@ export interface IButtonProps extends ICommonProps {
   size?: ElementSize;
   /** 是否显示为块状布局 */
   block?: boolean;
-  /** 是否显示为禁用状态 */
+  /** 是否显示为禁用状态，与激活状态二选一 */
   disabled?: boolean;
-  /** 是否显示为激活状态 */
+  /** 是否显示为激活状态，与禁用状态二选一 */
   active?: boolean;
   /** 是否显示为仅图标按钮 */
   iconOnly?: boolean;
+  /** 希望渲染的元素标签 */
+  customTag?: string;
   /** 按钮点击事件, event: 点击响应事件 */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
@@ -63,34 +65,41 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
     disabled,
     iconOnly,
     active,
+    customTag,
     className,
     children,
     onClick,
   } = props;
 
-  const realSize = typeof size === 'string' ? SizeMap[size] : null;
+  if (!customTag) {
+    console.error(`unreachable customTag:${customTag}`);
+    return null;
+  }
 
-  const innerCls: string = classNames(
-    'nuwa_btn',
+  const realSize = typeof size === 'string' ? SizeMap[size] : console.error(`unreachable size:${size}`);
+
+  const innerCls: string = classNames('nuwa_btn', {
+    [`${NUWA_PREFIX}_btn-${btnType && btnType === 'outlined' ? `${btnType}-` : ``}${type}`]:
+      type && ThemeColorArr.includes(type),
+    [`${NUWA_PREFIX}_btn-${btnType === 'outlined' ? `${btnType}-` : ``}hover-${hoverType}`]:
+      hoverType && ThemeColorArr.includes(hoverType),
+    [`${NUWA_PREFIX}_btn-${btnShape}`]: btnShape && BtnShapeArr.includes(btnShape) && btnShape !== 'round',
+    [`${NUWA_PREFIX}_btn-${realSize}`]: size && ElementSizeArr.includes(size) && size !== 'medium' && realSize,
+    [`${NUWA_PREFIX}_btn-link`]: btnType === 'link',
+    [`${NUWA_PREFIX}_btn-icon`]: iconOnly,
+    [`${NUWA_PREFIX}-block`]: block,
+    disabled: disabled && !active,
+    active: active && !disabled,
+  });
+
+  return React.createElement(
+    customTag,
     {
-      [`${NUWA_PREFIX}_btn-${btnType && btnType === 'outlined' ? `${btnType}-` : ``}${type}`]:
-        type && ThemeColorArr.includes(type),
-      [`${NUWA_PREFIX}_btn-${btnType !== 'basic' ? `${btnType}-` : ``}hover-${hoverType}`]:
-        hoverType && ThemeColorArr.includes(hoverType),
-      [`${NUWA_PREFIX}_btn-${btnShape}`]: btnShape && BtnShapeArr.includes(btnShape) && btnShape !== 'round',
-      [`${NUWA_PREFIX}_btn-${realSize}`]: size && ElementSizeArr.includes(size) && size !== 'medium' && realSize,
-      [`${NUWA_PREFIX}_btn-link`]: btnType === 'link',
-      [`${NUWA_PREFIX}_btn-icon`]: iconOnly,
-      [`${NUWA_PREFIX}-block`]: block,
-      disabled: disabled && !active,
-      active: active && !disabled,
+      type: htmlType,
+      className: classNames(innerCls, className),
+      onClick: (!disabled && onClick) || undefined,
     },
-  );
-
-  return (
-    <button type={htmlType} className={classNames(innerCls, className)} onClick={onClick}>
-      {children}
-    </button>
+    children,
   );
 };
 
@@ -105,6 +114,7 @@ Button.propTypes = {
   disabled: propTypes.bool,
   active: propTypes.bool,
   iconOnly: propTypes.bool,
+  customTag: propTypes.string,
   onClick: propTypes.func,
 };
 
@@ -117,6 +127,7 @@ Button.defaultProps = {
   block: false,
   disabled: false,
   iconOnly: false,
+  customTag: 'button',
 };
 
 export default Button;

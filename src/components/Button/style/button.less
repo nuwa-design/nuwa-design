@@ -157,9 +157,9 @@
       &:not(:disabled):not(.disabled).active,
       &:not(:disabled):not(.disabled):active,
       &:not(:disabled):not(.disabled):hover {
-        color: @inverse;
-        background-color: @base;
-        border-color: @base;
+        color: @inverse !important;
+        background-color: @base !important;
+        border-color: @base !important;
       }
     }
 
@@ -172,43 +172,5 @@
         background-color: transparent;
       }
     }
-
-    //&-font-@{key} {
-    //  color: @base;
-    //}
-    //
-    //&-font-hover-@{key} {
-    //  &:not(.disabled):not(:disabled) {
-    //    &.active,
-    //    &:active,
-    //    &:hover {
-    //      color: @base;
-    //    }
-    //  }
-    //}
-    //
-    //&-background-@{key} {
-    //  background-color: @base;
-    //}
-    //
-    //&-background-hover-@{key} {
-    //  &:not(.disabled):not(:disabled) {
-    //    &.active,
-    //    &:active,
-    //    &:hover {
-    //      background-color: @base;
-    //    }
-    //  }
-    //}
-    //&-link {
-    //  &:not(.disabled):not(:disabled) {
-    //    &.active,
-    //    &:active,
-    //    &:hover {
-    //      background-color: @base;
-    //    }
-    //  }
-    //}
-
   });
 }
