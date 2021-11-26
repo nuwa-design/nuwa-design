@@ -10,3 +10,9 @@ import Title from './title';
 export * from './interface';
 
 export { default } from './typography';
+
+export { default as Text } from './text';
+
+export { default as Title } from './title';
+
+export { default as Link } from './link';

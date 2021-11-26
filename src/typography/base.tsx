@@ -7,35 +7,19 @@
 
 import * as React from 'react';
 import classNames from 'classnames';
-import { IBaseProps, LevelTypeArr, TransformTypeArr, WeightTypeArr } from './interface';
+import { IBaseProps, TransformTypeArr, WeightTypeArr } from './interface';
 import { getGlobalStyleConfig } from '../common/utils';
 import { ThemeColorArr } from '../common/types';
 
-const { linkPrefix, fontPrefix, titlePrefix } = getGlobalStyleConfig();
-
-const TotalHeadTagName = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+const { fontPrefix } = getGlobalStyleConfig();
 
 const Base: React.FC<IBaseProps> = (props: IBaseProps) => {
-  const { type, weight, level, customTag, transform, isLink, className, children } = props;
-
-  // 是否为标题类型
-  const isTitleType = React.useMemo(
-    () =>
-      (customTag && TotalHeadTagName.includes(customTag)) ||
-      (level && LevelTypeArr.includes(level)),
-    [customTag, level],
-  );
-
-  // 是否为链接类型
-  const isLinkType = React.useMemo(() => isLink || customTag === 'a', [isLink, customTag]);
+  const { type, weight, customTag, transform, className, children } = props;
 
   const innerCls: string = classNames({
     [`${fontPrefix}-${weight}`]: weight && WeightTypeArr.includes(weight) && weight !== 'regular',
-    [`${fontPrefix}-${type}`]: !isLinkType && type && ThemeColorArr.includes(type),
+    [`${fontPrefix}-${type}`]: type && ThemeColorArr.includes(type),
     [`${fontPrefix}-transform-${transform}`]: transform && TransformTypeArr.includes(transform),
-    [`${titlePrefix}-h${level}`]: level && LevelTypeArr.includes(level),
-    [`${linkPrefix}`]: isLinkType && !isTitleType,
-    [`${linkPrefix}-${type}`]: isLinkType && !isTitleType && type && ThemeColorArr.includes(type),
   });
 
   if (!customTag) {
@@ -44,7 +28,7 @@ const Base: React.FC<IBaseProps> = (props: IBaseProps) => {
   }
 
   return React.createElement(
-    customTag,
+    customTag.toLowerCase(),
     {
       className: classNames(innerCls, className),
     },

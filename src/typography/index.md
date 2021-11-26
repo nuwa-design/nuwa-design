@@ -103,12 +103,12 @@ import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
- <Typography.Title level={1}>H1. Heading 1</Typography.Title><br /><br />
- <Typography.Title level={2}>H2. Heading 2</Typography.Title><br /><br />
- <Typography.Title level={3}>H3. Heading 3</Typography.Title><br /><br />
- <Typography.Title level={4}>H4. Heading 4</Typography.Title><br /><br />
- <Typography.Title level={5}>H5. Heading 5</Typography.Title><br /><br />
- <Typography.Title level={6}>H6. Heading 6</Typography.Title><br /><br />
+ <Typography.Title customTag="h1">H1. Heading 1</Typography.Title><br /><br />
+ <Typography.Title customTag="h2">H2. Heading 2</Typography.Title><br /><br />
+ <Typography.Title customTag="h3">H3. Heading 3</Typography.Title><br /><br />
+ <Typography.Title customTag="h4">H4. Heading 4</Typography.Title><br /><br />
+ <Typography.Title customTag="h5">H5. Heading 5</Typography.Title><br /><br />
+ <Typography.Title customTag="h6">H6. Heading 6</Typography.Title><br /><br />
 </>;
 ```
 
@@ -120,16 +120,16 @@ export default () => <>
  * description: 标题类型支持文本类型的 **全部** 属性，因此适用于文本的属性，也将 **适用于** 标题。
  *
  */
-import React from "react";
+import React from 'react';
 import { Typography } from 'nuwa-design';
 
 export default () => <>
- <Typography.Title level={1} type="primary">H1. Heading 1</Typography.Title><br /><br />
- <Typography.Title level={2} type="success">H2. Heading 2</Typography.Title><br /><br />
- <Typography.Title level={3} type="info">H3. Heading 3</Typography.Title><br /><br />
- <Typography.Title level={4} type="warning">H4. Heading 4</Typography.Title><br /><br />
- <Typography.Title level={5} type="danger">H5. Heading 5</Typography.Title><br /><br />
- <Typography.Title level={6} type="secondary">H6. Heading 6</Typography.Title><br /><br />
+ <Typography.Title customTag="h1" type="primary">H1. Heading 1</Typography.Title><br /><br />
+ <Typography.Title customTag="h2" type="success">H2. Heading 2</Typography.Title><br /><br />
+ <Typography.Title customTag="h3" type="info">H3. Heading 3</Typography.Title><br /><br />
+ <Typography.Title customTag="h4" type="warning">H4. Heading 4</Typography.Title><br /><br />
+ <Typography.Title customTag="h5" type="danger">H5. Heading 5</Typography.Title><br /><br />
+ <Typography.Title customTag="h6" type="secondary">H6. Heading 6</Typography.Title><br /><br />
 </>;
 ```
 
@@ -176,4 +176,4 @@ export default () => <>
 ```
 
 
-<API src="./Typography.tsx"></API>
+<API src="./typography.tsx" ></API>
