@@ -1,0 +1,50 @@
+/**
+  Title Less
+ */
+@import "../../style/variable";
+
+.heading {
+  margin-top: 0;
+  margin-bottom: @headings-margin-bottom;
+  color: @headings-color;
+  font-weight: @headings-font-weight;
+  font-family: @headings-font-family;
+  font-style: @headings-font-style;
+  line-height: @headings-line-height;
+}
+
+.@{title-prefix-cls}-h1 {
+  &:extend(.heading);
+
+  font-size: @h1-font-size;
+}
+
+.@{title-prefix-cls}-h2 {
+  &:extend(.heading);
+
+  font-size: @h2-font-size;
+}
+
+.@{title-prefix-cls}-h3 {
+  &:extend(.heading);
+
+  font-size: @h3-font-size;
+}
+
+.@{title-prefix-cls}-h4 {
+  &:extend(.heading);
+
+  font-size: @h4-font-size;
+}
+
+.@{title-prefix-cls}-h5 {
+  &:extend(.heading);
+
+  font-size: @h5-font-size;
+}
+
+.@{title-prefix-cls}-h6 {
+  &:extend(.heading);
+
+  font-size: @h6-font-size;
+}
