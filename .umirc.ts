@@ -12,6 +12,18 @@ const config = defineConfig({
     { title: 'GitHub', path: 'https://github.com/nuwa-design' },
     { title: '更新日志', path: 'https://github.com/nuwa-design/nuwa-design/releases' },
   ],
+  extraBabelPlugins: [
+    [
+      'import',
+      {
+        libraryName: 'nuwa-design',
+        customStyleName: (name: string) => {
+          return `nuwa-design/lib/${name.toLowerCase()}/style/index.less`; // 注意：这里 ./ 不可省略
+        },
+      },
+      'lean',
+    ],
+  ],
 });
 
 export default config;

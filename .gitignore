@@ -10,6 +10,7 @@
 
 */**/__tests__
 
+_site/
 /site
 # testing
 /coverage

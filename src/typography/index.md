@@ -38,7 +38,7 @@ group:
  * description: 我们预设了一组表达文字粗细的属性值，您可以使用 `regular`、`bold`、`bolder`、`boldest` 来设置文字粗细。
  *
  */
-import React, {useCallback} from "react";
+import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
@@ -57,7 +57,7 @@ export default () => <>
  * description: 文字状态能向用户表达不同的含义，在不同业务场景设置与之对应的文字状态，可以显著提升用户体验。
  *
  */
-import React, {useCallback} from "react";
+import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
@@ -78,7 +78,7 @@ export default () => <>
  * description: 在一些场景中，用户更希望看到 大写、小写或首字母大写的内容，来试试自动转换吧。
  *
  */
-import React, {useCallback} from "react";
+import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
@@ -99,7 +99,7 @@ export default () => <>
  * description: 我们内置了多层级标题（`h1` ~ `h6`），在一些场景下，不同层级的标题表示不同的作用。
  *
  */
-import React, {useCallback} from "react";
+import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
@@ -120,7 +120,7 @@ export default () => <>
  * description: 标题类型支持文本类型的 **全部** 属性，因此适用于文本的属性，也将 **适用于** 标题。
  *
  */
-import React, {useCallback} from "react";
+import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
@@ -143,7 +143,7 @@ export default () => <>
  * description: 我们内置了一组基础的链接样式，与主题色保持了一致。
  *
  */
-import React, {useCallback} from "react";
+import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
@@ -162,7 +162,7 @@ export default () => <>
  * description: 链接类型支持文本类型的 **全部** 属性，因此适用于文本的属性，也将 **适用于** 标题。
  *
  */
-import React, {useCallback} from "react";
+import React from "react";
 import { Typography } from 'nuwa-design';
 
 export default () => <>
