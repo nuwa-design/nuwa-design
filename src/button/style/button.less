@@ -1,0 +1,181 @@
+/**
+  Button Styles
+ */
+
+// Global Styles
+@import '../../style/index';
+// Button mixins
+@import './mixins/index';
+
+.@{btn-prefix-cls} {
+  display: inline-block;
+  align-items: center;
+  color: @body-color;
+  font-weight: @btn-font-weight;
+  font-family: @btn-font-family;
+  line-height: @btn-line-height;
+  white-space: @btn-white-space;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: @btn-border-width solid transparent;
+  outline: none !important;
+  cursor: if(@enable-button-pointers, pointer, null);
+  user-select: none;
+  .btn-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius);
+  .transition(@btn-transition);
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &-secondary,
+  &-outlined-secondary {
+    color: @secondary[inverse];
+    background-color: transparent;
+    border: 1px solid @btn-secondary-border-color;
+
+    &.@{btn-prefix-cls}-link {
+      color: @secondary[inverse];
+      background-color: transparent;
+      border: 1px solid transparent;
+    }
+
+    &:not(.disabled):not(:disabled) {
+      &:focus,
+      &.active,
+      &:active,
+      &:hover,
+      &.@{btn-prefix-cls}-link:not(.disabled):not(:disabled):focus,
+      &.@{btn-prefix-cls}-link:active,
+      &.@{btn-prefix-cls}-link.active,
+      &.@{btn-prefix-cls}-link:hover {
+        color: @secondary[inverse];
+        background-color: @btn-secondary-hover-bg-color;
+      }
+    }
+  }
+
+  &-lg {
+    .btn-size(@btn-padding-y-lg, @btn-padding-x-lg, @btn-font-size-lg, @btn-border-radius-lg);
+  }
+
+  &-sm {
+    .btn-size(@btn-padding-y-sm, @btn-padding-x-sm, @btn-font-size-sm, @btn-border-radius-sm);
+  }
+
+  &-square {
+    border-radius: @btn-shape-square-radius;
+  }
+
+  &-pill {
+    border-radius: @btn-shape-pill-radius;
+  }
+
+  &-circle {
+    border-radius: @btn-shape-circle-radius;
+  }
+
+  &-link {
+    color: @btn-link-color;
+    font-weight: @font-weight-normal;
+    text-decoration: @link-decoration;
+
+    &:not(:disabled):not(.disabled) {
+      &:hover,
+      &:focus,
+      &:active {
+        color: @btn-link-hover-color;
+        text-decoration: @link-hover-decoration;
+        background-color: @btn-link-hover-background-color;
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      color: @btn-link-disabled-color;
+    }
+  }
+
+  i, svg {
+    padding-right: 0.5rem;
+    line-height: 0;
+    vertical-align: middle;
+  }
+
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    i, svg {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+    }
+
+    & {
+      width: @btn-icon-only-height;
+      height: @btn-icon-only-width;
+    }
+
+    &.@{btn-prefix-cls}-lg {
+      width: @btn-icon-only-height-lg;
+      height: @btn-icon-only-width-lg;
+    }
+
+    &.@{btn-prefix-cls}-sm {
+      width: @btn-icon-only-height-sm;
+      height: @btn-icon-only-width-sm;
+    }
+  }
+
+  each(@theme-colors, {
+    @base: @value[base];
+    @inverse: @value[inverse];
+
+    &.@{btn-prefix-cls}-@{key} {
+      &:not(.@{btn-prefix-cls}-link) {
+        .button-variant(@base, @base);
+      }
+
+      &.@{btn-prefix-cls}-link {
+        color: @base;
+        //background-color: @inverse;
+
+        &:not(.disabled):not(:disabled) {
+          &.active,
+          &:active,
+          &:hover {
+            background-color: @base;
+          }
+        }
+      }
+    }
+
+    &.@{btn-prefix-cls}-outlined-@{key} {
+      .button-outline-variant(@base);
+    }
+
+    &.@{btn-prefix-cls}-hover-@{key} {
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled):hover {
+        color: @inverse !important;
+        background-color: @base !important;
+        border-color: @base !important;
+      }
+    }
+
+    &.@{btn-prefix-cls}-outlined-hover-@{key} {
+      &:not(:disabled):not(.disabled).active,
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled):hover {
+        color: @base;
+        border-color: @base;
+        background-color: transparent;
+      }
+    }
+  });
+}

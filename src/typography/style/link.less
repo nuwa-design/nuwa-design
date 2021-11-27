@@ -1,0 +1,48 @@
+/**
+  Link Styles
+ */
+@import "../../style/variable";
+@import "./mixins/index";
+
+.@{link-prefix-cls} {
+  position: relative;
+  display: inline-block;
+  color: @brand[base];
+  text-decoration: none;
+  cursor: if(@enable-link-pointers, pointer, null);
+
+  &::after {
+    position: absolute;
+    top: 1rem;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 0%;
+    transition: width 0.3s ease;
+    content: '';
+  }
+
+  &:hover {
+    text-decoration: none !important;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  .nuwa-link-color(@typography-link-color, @typography-link-hover-color);
+
+  each(@theme-colors, {
+    @base: @value[base];
+    @inverse: @value[inverse];
+
+    &.@{link-prefix-cls}-@{key} {
+      .nuwa-link-color(@base, darken(@base, 10%));
+    }
+  });
+
+  &.@{link-prefix-cls}-secondary {
+    .nuwa-link-color(@secondary[inverse], darken(@secondary[inverse], 10%));
+  }
+
+}

@@ -1,0 +1,76 @@
+/**
+  Text Less
+ */
+@import "../../style/variable";
+
+// Text Transform
+.@{font-prefix-cls}-transform-uppercase {
+  text-transform: uppercase;
+}
+
+.@{font-prefix-cls}-transform-lowercase {
+  text-transform: lowercase;
+}
+
+.@{font-prefix-cls}-transform-capitalize {
+  text-transform: capitalize;
+}
+
+.@{font-prefix-cls}-transform-initial {
+  text-transform: initial;
+}
+
+// Font Weights
+.@{font-prefix-cls}-regular {
+  font-weight: 400 !important;
+}
+
+.@{font-prefix-cls}-bold {
+  font-weight: 500 !important;
+}
+
+.@{font-prefix-cls}-bolder {
+  font-weight: 600 !important;
+}
+
+.@{font-prefix-cls}-boldest {
+  font-weight: 700 !important;
+}
+
+
+// Font Colors
+each(@theme-colors, {
+  @base: @value[base];
+  @inverse: @value[inverse];
+
+  .@{font-prefix-cls}-@{key} {
+    color: @base !important;
+  }
+
+  .@{font-prefix-cls}-hover-@{key} {
+    &:hover {
+      color: darken(@base, 20%);
+    }
+  }
+
+  .@{font-prefix-cls}-inverse-@{key} {
+    color: @inverse !important;
+  }
+
+  .@{font-prefix-cls}-bg-@{key} {
+    background-color: @base !important;
+  }
+
+  .@{font-prefix-cls}-bg-fill-@{key} {
+    background-color: @base !important;
+    color: @inverse !important;
+
+    > i {
+      color: @inverse !important;
+    }
+  }
+
+  .@{font-prefix-cls}-bg-light-@{key} {
+    background-color: rgba(@base, 0.1) !important;
+  }
+});
