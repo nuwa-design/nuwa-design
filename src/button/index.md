@@ -40,6 +40,7 @@ group:
 /**
  * title: 基础示例
  * description: 这是一组基础按钮，通过指定不同的 `type` 属性，可实现不同场景的按钮展示。
+ * hideActions: '["CSB"]'
  *
  */
 import React, { useCallback } from "react";
@@ -66,6 +67,7 @@ export default () => <>
 /**
  * title: 更多按钮类型
  * description: 除了基础按钮，我们还为您提供了一套线框按钮（`outlined`）和文字按钮（`link`）可供选择，
+ * hideActions: '["CSB"]'
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';
@@ -100,6 +102,7 @@ export default () => <>
 /**
  * title: 按钮尺寸
  * description: 除了常规按钮尺寸外，我们还提供了通过修改 `size` 属性设置更大尺寸（`large`）或更小（`small`）尺寸。
+ * hideActions: '["CSB"]'
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';
@@ -132,6 +135,7 @@ export default () => <>
 /**
  * title: 不同形状
  * description: 看腻了圆角按钮？来试试直角（`square`）、扁平形（`pill`）和圆形（`circle`）形状吧。
+ * hideActions: '["CSB"]'
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';
@@ -173,6 +177,7 @@ export default () => <>
 /**
  * title: 布局方式
  * description: 无论是行内布局（`inline`），还是块状布局（`block`），按钮总是能得心应手。
+ * hideActions: '["CSB"]'
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';
@@ -198,6 +203,7 @@ export default () => <>
 /**
  * title: 带图标的按钮
  * description: 我们对业界主流的图标库进行了优化展示，您可以直接使用第三方图标库，也支持您只展示图标（`onlyIcon`）。
+ * hideActions: '["CSB"]'
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';
@@ -240,6 +246,7 @@ export default () => <>
 /**
  * title: 带图标的按钮
  * description: 在某些业务场景，您可以设置 `disabled` 状态禁止按钮点击，也可以设置 `active` 表示当前按钮被激活。
+ * hideActions: '["CSB"]'
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';
@@ -271,6 +278,7 @@ export default () => <>
 /**
  * title: 自定义标签
  * description: 考虑到 `button` 标签可能存在副作用，因此我们允许您使用自定义标签 `customTag` 模拟按钮行为，例如 `a` 或者 `span` 等，自定义标签保持原生 `button` 一致的交互方式。
+ * hideActions: '["CSB"]'
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';

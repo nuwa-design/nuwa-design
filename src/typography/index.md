@@ -7,7 +7,7 @@ nav:
 group:
  path: /common
  title: 通用
- order: 1
+ order: 2
 ---
 
 ## Typography 排版
@@ -36,7 +36,7 @@ group:
 /**
  * title: 粗细
  * description: 我们预设了一组表达文字粗细的属性值，您可以使用 `regular`、`bold`、`bolder`、`boldest` 来设置文字粗细。
- *
+ * hideActions: '["CSB"]'
  */
 import React from "react";
 import { Typography } from 'nuwa-design';
@@ -55,7 +55,7 @@ export default () => <>
 /**
  * title: 状态
  * description: 文字状态能向用户表达不同的含义，在不同业务场景设置与之对应的文字状态，可以显著提升用户体验。
- *
+ * hideActions: '["CSB"]'
  */
 import React from "react";
 import { Typography } from 'nuwa-design';
@@ -76,7 +76,7 @@ export default () => <>
 /**
  * title: 大小写转换
  * description: 在一些场景中，用户更希望看到 大写、小写或首字母大写的内容，来试试自动转换吧。
- *
+ * hideActions: '["CSB"]'
  */
 import React from "react";
 import { Typography } from 'nuwa-design';
@@ -97,7 +97,7 @@ export default () => <>
 /**
  * title: 基础标题
  * description: 我们内置了多层级标题（`h1` ~ `h6`），在一些场景下，不同层级的标题表示不同的作用。
- *
+ * hideActions: '["CSB"]'
  */
 import React from "react";
 import { Typography } from 'nuwa-design';
@@ -118,7 +118,7 @@ export default () => <>
 /**
  * title: 带状态的标题
  * description: 标题类型支持文本类型的 **全部** 属性，因此适用于文本的属性，也将 **适用于** 标题。
- *
+ * hideActions: '["CSB"]'
  */
 import React from 'react';
 import { Typography } from 'nuwa-design';
@@ -141,7 +141,7 @@ export default () => <>
 /**
  * title: 基础链接
  * description: 我们内置了一组基础的链接样式，与主题色保持了一致。
- *
+ * hideActions: '["CSB"]'
  */
 import React from "react";
 import { Typography } from 'nuwa-design';
@@ -160,7 +160,7 @@ export default () => <>
 /**
  * title: 带状态的链接
  * description: 链接类型支持文本类型的 **全部** 属性，因此适用于文本的属性，也将 **适用于** 标题。
- *
+ * hideActions: '["CSB"]'
  */
 import React from "react";
 import { Typography } from 'nuwa-design';
