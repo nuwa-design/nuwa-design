@@ -241,7 +241,7 @@ exports[`Button should handle fragment as children 1`] = `
   type="primary"
 >
   <button
-    className="nuwaPrefix_btn nuwaPrefix_btn-primary"
+    className="btnPrefix btnPrefix-primary"
     type="button"
   >
     text
@@ -251,7 +251,7 @@ exports[`Button should handle fragment as children 1`] = `
 
 exports[`Button should render empty button without errors 1`] = `
 <button
-  class="nuwaPrefix_btn nuwaPrefix_btn-primary"
+  class="btnPrefix btnPrefix-primary"
   type="button"
 />
 `;

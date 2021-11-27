@@ -21,6 +21,10 @@ export const ThemeColorArr = [
 // 通用尺寸配置类型
 export const ElementSizeArr = ['medium', 'small', 'large'];
 
+export const AlignArr = ['left', 'center', 'right'];
+
 export type ThemeColor = typeof ThemeColorArr[number];
 
 export type ElementSize = typeof ElementSizeArr[number];
+
+export type Align = typeof AlignArr[number];

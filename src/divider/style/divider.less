@@ -1,0 +1,66 @@
+/**
+  Divider Style
+ */
+// Global Styles
+@import '../../style/variable';
+
+.@{divider-prefix-cls} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > span {
+    &:first-child {
+      display: inline-block;
+      flex: 1;
+      width: 100%;
+      height: 1px;
+      background: @divider-line-color;
+    }
+
+    &:last-child {
+      display: inline-block;
+      flex: 1;
+      width: 100%;
+      height: 1px;
+      background: @divider-line-color;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      padding: 0 @divider-text-padding;
+
+      &.@{divider-prefix-cls}-text-lg {
+        padding: 0 @divider-text-padding-lg;
+      }
+
+      &.@{divider-prefix-cls}-text-sm {
+        padding: 0 @divider-text-padding-sm;
+      }
+
+      each(@theme-colors, {
+        @base: @value[base];
+        &.@{divider-prefix-cls}-text-@{key} {
+          color: @base;
+        }
+      });
+    }
+  }
+
+  &-left {
+    > span {
+      &:first-child {
+        flex: none;
+        width: @divider-align-left;
+      }
+    }
+  }
+
+  &-right {
+    > span {
+      &:last-child {
+        flex: none;
+        width: @divider-align-right;
+      }
+    }
+  }
+}
