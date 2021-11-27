@@ -1,0 +1,12 @@
+/**
+  Grid Style
+ */
+@import '../../style/variable';
+@import './mixins/index';
+
+.row {
+  .make-row();
+  > * {
+    .make-col-ready();
+  }
+}
