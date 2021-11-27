@@ -1,5 +1,5 @@
 ---
-title: Button 按钮
+title: Button 按钮 
 nav:
  path: /components
  title: 组件
@@ -9,7 +9,7 @@ group:
  title: 通用
  order: 2
 ---
-## Button 按钮
+## Button 按钮 <Badge type="error">NEW!</Badge>
 
 只需轻点按钮，用户就可以触发动作或做出选择。
 
