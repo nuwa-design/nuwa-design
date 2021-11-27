@@ -1,6 +1,21 @@
 # Changelog
 
-### [0.1.0](https://github.com/nuwa-design/nuwa-design/release/v0.1.0) (2021-11-27)
+### [0.2.0](https://github.com/nuwa-design/nuwa-design/releases/tag/v0.2.0) (2021-11-27)
+
+### Features
+
+* 🎸 分隔线组件全新上线，新增 `Divider` 组件，使用方式详见 [Typography 排版](https://nuwa.design/components/divider)。
+
+### Bug Fixes
+
+* 🐛 修复按钮组件 `Button` 生成的 `className` 无法覆盖 `btnPrefix` 的问题。
+* 🐛 因样式问题，暂时移除 `brand`、`light`、`dark` 三种设计语言类型。
+
+### Docs
+
+* ✏️ 上线分隔线组件功能文档。
+
+### [0.1.0](https://github.com/nuwa-design/nuwa-design/releases/tag/v0.1.0) (2021-11-27)
 
 ### Features
 
