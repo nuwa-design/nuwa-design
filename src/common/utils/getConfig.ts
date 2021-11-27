@@ -5,6 +5,7 @@
  * @Date 2021/11/26 16:10:46
  */
 import { IGlobalStyleConfig } from '../interfaces';
+// @ts-ignore
 import variables from '../../style/index.less';
 
 /**
@@ -18,6 +19,7 @@ export const getGlobalStyleConfig: () => IGlobalStyleConfig = () => {
     fontPrefix: variables.fontPrefix || `${nuwaPrefix}_font`,
     titlePrefix: variables.titlePrefix || `${nuwaPrefix}_title`,
     linkPrefix: variables.linkPrefix || `${nuwaPrefix}_link`,
+    dividerPrefix: variables.dividerPrefix || `${nuwaPrefix}_divider`,
   };
   return config;
 };

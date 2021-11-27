@@ -6,7 +6,7 @@ import { ThemeColorArr, ElementSizeArr } from '../common/types';
 import { SizeMap } from '../common/configs';
 import { getGlobalStyleConfig } from '../common/utils';
 
-const NUWA_PREFIX = getGlobalStyleConfig().nuwaPrefix;
+const { btnPrefix, nuwaPrefix } = getGlobalStyleConfig();
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
   const {
@@ -34,18 +34,18 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
   const realSize =
     typeof size === 'string' ? SizeMap[size] : console.error(`unreachable size:${size}`);
 
-  const innerCls: string = classNames(`${NUWA_PREFIX}_btn`, {
-    [`${NUWA_PREFIX}_btn-${btnType && btnType === 'outlined' ? `${btnType}-` : ''}${type}`]:
+  const innerCls: string = classNames(btnPrefix, {
+    [`${btnPrefix}-${btnType && btnType === 'outlined' ? `${btnType}-` : ''}${type}`]:
       type && ThemeColorArr.includes(type),
-    [`${NUWA_PREFIX}_btn-${btnType === 'outlined' ? `${btnType}-` : ''}hover-${hoverType}`]:
+    [`${btnPrefix}-${btnType === 'outlined' ? `${btnType}-` : ''}hover-${hoverType}`]:
       hoverType && ThemeColorArr.includes(hoverType),
-    [`${NUWA_PREFIX}_btn-${btnShape}`]:
+    [`${btnPrefix}-${btnShape}`]:
       btnShape && BtnShapeArr.includes(btnShape) && btnShape !== 'round',
-    [`${NUWA_PREFIX}_btn-${realSize}`]:
+    [`${btnPrefix}-${realSize}`]:
       size && ElementSizeArr.includes(size) && size !== 'medium' && realSize,
-    [`${NUWA_PREFIX}_btn-link`]: btnType === 'link',
-    [`${NUWA_PREFIX}_btn-icon`]: iconOnly,
-    [`${NUWA_PREFIX}-block`]: block,
+    [`${btnPrefix}-link`]: btnType === 'link',
+    [`${btnPrefix}-icon`]: iconOnly,
+    [`${nuwaPrefix}-block`]: block,
     disabled: disabled && !active,
     active: active && !disabled,
   });

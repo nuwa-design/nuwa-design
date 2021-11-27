@@ -11,6 +11,7 @@ export interface IGlobalStyleConfig {
   titlePrefix?: string;
   linkPrefix?: string;
   btnPrefix?: string;
+  dividerPrefix?: string;
 }
 
 export default {};
