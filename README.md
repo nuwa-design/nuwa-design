@@ -1,41 +1,65 @@
-## React 组件库搭建指南
+# Nuwa Design
 
-- [React 组件库搭建指南（一）：项目初始化](https://github.com/worldzhao/blog/issues/3)
-- [React 组件库搭建指南（二）：开发调试](https://github.com/worldzhao/blog/issues/4)
-- [React 组件库搭建指南（三）：编译打包](https://github.com/worldzhao/blog/issues/5)
-- [React 组件库搭建指南（四）：单元测试](https://github.com/worldzhao/blog/issues/6)
-- [React 组件库搭建指南（五）：标准化发布流程](https://github.com/worldzhao/blog/issues/7)
+![](https://img.shields.io/badge/node-%3E%3D16.10.0-brightgreen.svg) ![](https://img.shields.io/badge/npm-%3E%3D7.24.0-brightgreen.svg) ![](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg) ![](https://img.shields.io/badge/release-v0.1.0-blue.svg) ![](https://img.shields.io/npm/l/express.svg)
 
-组件库一直是前端开发不可或缺的一环，主要是为了开发提效，避免开发同学复制粘贴和重复造轮子。
+为开发者、设计师和产品经理准备的 UI 设计语言
 
-对于 2C 移动端场景而言，不同业务线的设计规范大相径庭，过于定制化，所以内部其实一直没有一套基于 React 的移动端组件库。
+## 功能特性
 
-而对于某一条特定的业务线来讲，设计语言是能够也必须要达到统一的。
+* 开箱即用的高质量组件，为开发者、设计师和产品经理提供丰富的创意和思路。
+* 兼容 IE, Chrome 和 Firefox 等绝大部分主流浏览器，为用户带来统一的视觉体验。
+* 拥有全链路开发和设计工具体系，永久免费。
 
-于是在部门内搭了一个简单的组件库，组件不多，但在搭建过程中掌握了很多知识，再看 antd 等热门组件库，对其中的一些设计也有了更深的感悟，故记录下来，希望能帮助到其他的同学。
+## 快速构建
 
-[🚀 在线预览](https://worldzhao.github.io/react-ui-library-tutorial)
+推荐使用快速构建工具  `nuwa-tools`  搭建项目，只需依次执行：
+![](https://cdn.qulongjun.cn/shine/build-tools.png)
+> 构建工具具体用法清参考[构建工具说明](https://nuwa.design/cli)。
 
-🚆 本地预览
+## 使用示例
 
-```bash
-git clone git@github.com:worldzhao/react-ui-library-tutorial.git
-cd react-ui-library-tutorial
-yarn
-yarn start
-```
+Nuwa Design 入门比你想象的更简单, **你只需做如下事情**:
 
-按顺序执行完命令后，即可在 localhost:3000 端口看到以下内容：
+**待补充**
 
-![preview](https://raw.githubusercontent.com/worldzhao/blog/master/images/rc-lib-v1-1.jpg)
+> 我们提供了丰富的组件供开发者使用，可以查看[组件文档](https://nuwa.design/tutorial)。
 
-## 概览
+## 调试与部署
 
-本系列文章主要包含以下内容：
+快速构建工具已经集成了一键式调试与部署指令，只需执行如下命令即可实现开发环境下的调试和生产环境的部署：
 
-- 项目初始化: 组件库前期开发准备工作。`eslint`/`commit lint`/`typescript`等等；
-- 开发阶段: 使用 [dumi](https://d.umijs.org/zh-CN) 进行开发调试以及文档编写；
-- 打包阶段: 输出~~`umd`~~/`cjs`/`esm`产物并支持按需加载；
-- 组件测试: 使用`@testing-library/react`及其相关生态进行组件测试；
-- 发布 npm: 编写脚本完成发布或直接使用 [np](https://www.npmjs.com/package/np) 发布；
-- 部署文档站点: 使用 Github Pages 以及 Github Actions 完成文档站点自动部署。
+**待补充**
+
+> 开发环境下启动调试后，在浏览器中打开 [http://127.0.0.1:3000](http://127.0.0.1:3000) 查看效果。
+
+## 发布周期
+
+本项目更新参照 [Semantic Versioning 2.0.0](https://semver.org/) 标准进行：
+
+- 修订版本：每周一个修订版本，用于进行日常的 Bug 修复（非紧急）。
+- 次版本号：每一到两天发布一个次版本，次版本更新会向下兼容当前主版本。
+- 主版本号：重大迭代工作，非周期性更新，与历史主版本不兼容。
+
+## 获取帮助
+
+如果您在使用的过程中碰到问题，可以通过下面几个途径寻求帮助：
+
+* 我们提供了详细的[组件文档](https://nuwa.design/tutorial)，大部分问题都可以在文档中得以解决。
+* 利用强大的 [Issue](https://github.com/nuwa-design/nuwa-design/issues) 功能，您可以直接进行提问，我们会随时关注并解答，同时我们也鼓励资深用户通过 Issue 给新人提供帮助。
+
+## 参与项目
+
+我们很期待您能参与进来一起开发 :)，但我们希望您能遵守相关约定：
+
+* 我们有一份[行为准则](./CODE_OF_CONDUCT.md)，希望所有的贡献者都能遵守，请花时间阅读一遍全文以确保您能明白哪些是可以做的，哪些是不可以做的。
+* 基于我们的发布周期，我们每周都会从 `master` 分支切一个 `release` 分支出来，命名规则一般为 `release-版本号` ，例如 `release-1.0.0` 即将要发布的 `1.0.0`
+  版本。如果您进行了一个Bug修复，请直接 Pull Request 到当前的 `release` 分支，如果进行的是新功能开发，请 Pull Request 到 `master` 分支。
+* 如果您有较好的创意，我们也欢迎您通过[Issue](https://github.com/nuwa-design/nuwa-design/issues) 直接告诉我们。
+
+## 联系我们
+
+如果您需要联系我们，可以通过发送邮件至 [contact@nuwa.design](mailto:contact@nuwa.design) 。
+
+## License
+
+本项目基于 [MIT license](./LICENSE) 开源。
