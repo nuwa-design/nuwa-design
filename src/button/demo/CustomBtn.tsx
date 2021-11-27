@@ -1,6 +1,7 @@
 /**
  * title: 个性化定制
  * description: 按钮样式不够满意？不妨定制一个 `个性化` 按钮吧，多种 `色彩` 、 `尺寸`、 `形状` 等搭配供您选择，快来试试！
+ * hideActions: '["CSB"]'
  */
 /**
  * @FileName src/components/Button/demo/CustomBtn.tsx
