@@ -7,9 +7,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-export default function mountTest(Component: React.ComponentType) {
+export default function mountTest(Component: React.FC<any>, desc?: string) {
   describe(`mount and unmount`, () => {
-    it(`component could be updated and unmounted without errors`, () => {
+    it(desc || `component could be updated and unmounted without errors`, () => {
       const wrapper = mount(<Component />);
       expect(() => {
         wrapper.setProps({});

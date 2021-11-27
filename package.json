@@ -1,135 +1,145 @@
 {
   "name": "nuwa-design",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "为开发者、设计师和产品经理准备的 UI 设计语言",
   "author": "qulongjun <contact@nuwa.design>",
   "homepage": "https://nuwa.design",
-  "license": "MIT",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "unpkg": "dist/umd/nuwa-design.production.min.js",
-  "typings": "dist/cjs/index.d.ts",
-  "directories": {
-    "doc": "docs",
-    "test": "__tests__"
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "typings": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "authors": {
+    "name": "qulongjun",
+    "email": "contact@nuwa.design"
   },
   "files": [
-    "dist"
+    "lib",
+    "esm"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+  "scripts": {
+    "dev": "dumi dev",
+    "start": "npm run dev",
+    "build:site": "rimraf doc-site && dumi build",
+    "preview:site": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
+    "deploy:site": "npm run build:site && gh-pages -d doc-site",
+    "clean": "rimraf lib esm dist",
+    "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
+    "build": "npm run clean && npm run build:types && gulp",
+    "prepublishOnly": "npm run build",
+    "release": "np --no-cleanup --no-tests --any-branch",
+    "commit": "git-cz",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot",
+    "new": "plop --plopfile ./scripts/plopfile.ts",
+    "postnew": "prettier --write src/**/*{ts,tsx} --loglevel silent"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuwa-design/nuwa-design"
   },
-  "scripts": {
-    "test": "cross-env NODE_ENV=test && jest",
-    "build": "yarn build:esm && yarn build:cjs && yarn build:umd",
-    "build:esm": "rimraf dist/es && cross-env NODE_ENV=production BABEL_ENV=esm rollup -c && yarn build:typed --outDir dist/es",
-    "build:cjs": "rimraf dist/cjs && cross-env NODE_ENV=production BABEL_ENV=cjs rollup -c && yarn build:typed --outDir dist/cjs",
-    "build:umd": "rimraf dist/umd && cross-env NODE_ENV=production BABEL_ENV=umd rollup -c",
-    "build:typed": "tsc --declaration --emitDeclarationOnly --noEmit false",
-    "lint-staged": "lint-staged",
-    "check:tsc": "tsc",
-    "lint-staged:js": "cross-env ESLINT_ENV=commit eslint --fix --ext .js,.jsx",
-    "lint-staged:ts": "cross-env ESLINT_ENV=commit eslint --fix --ext .ts,.tsx",
-    "release": "standard-version",
-    "start": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs-dist"
-  },
+  "keywords": [],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nuwa-design/nuwa-design/issues"
   },
-  "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-proposal-decorators": "^7.16.4",
-    "@babel/plugin-proposal-export-default-from": "^7.12.1",
-    "@babel/plugin-proposal-export-namespace-from": "^7.12.1",
-    "@babel/plugin-proposal-function-sent": "^7.12.1",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-transform-classes": "^7.12.1",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-react": "^7.12.10",
-    "@babel/preset-typescript": "^7.12.7",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
-    "@rollup/plugin-alias": "^3.1.8",
-    "@rollup/plugin-babel": "^5.2.2",
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-eslint": "^8.0.1",
-    "@rollup/plugin-image": "^2.0.6",
-    "@rollup/plugin-node-resolve": "^11.0.1",
-    "@rollup/plugin-replace": "^2.3.4",
-    "@types/enzyme": "^3.10.10",
-    "@types/jest": "^27.0.3",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "@umijs/test": "^3.0.5",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
-    "autoprefixer": "^10.2.1",
-    "cross-env": "^7.0.3",
-    "dumi": "^1.0.17",
-    "enzyme": "^3.11.0",
-    "eslint": "^7.17.0",
-    "eslint-config-airbnb-typescript": "^12.0.0",
-    "eslint-config-prettier": "^7.1.0",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "father-build": "^1.17.2",
-    "gh-pages": "^3.0.0",
-    "git-cz": "^4.8.0",
-    "jest": "^27.3.1",
-    "jest-enzyme": "^7.1.2",
-    "jest-transform-stub": "^2.0.0",
-    "less": "3.10.3",
-    "lint-staged": "^10.5.3",
-    "postcss": "^8.2.2",
-    "prettier": "^2.2.1",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-json-view": "^1.21.3",
-    "react-select": "^5.2.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.36.0",
-    "rollup-plugin-styles": "^3.12.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "standard-version": "^9.3.2",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.1.3",
-    "yorkie": "^2.0.0"
+  "lint-staged": {
+    "src/**/*.ts?(x)": [
+      "prettier --write",
+      "eslint --fix",
+      "jest --bail --findRelatedTests",
+      "git add"
+    ],
+    "src/**/*.less": [
+      "stylelint --syntax less --fix",
+      "git add"
+    ]
   },
-  "dependencies": {
-    "@babel/runtime": "^7.12.5",
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "classnames": "^2.3.1"
-  },
-  "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
-  "sideEffects": [
-    "dist/umd/*",
-    "dist/es/**/*.css",
-    "dist/cjs/**/*.css",
-    "*.less"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
     }
   },
-  "gitHead": "0be4e386e3aa7c3323c31b25c16dc4ba2d5d5f7b"
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.7",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/enzyme": "^3.10.10",
+    "@types/jest": "^24.0.25",
+    "@types/react": "^16.8.0",
+    "@types/react-dom": "^16.8.0",
+    "@types/testing-library__react": "^9.1.2",
+    "@typescript-eslint/parser": "^1.9.0",
+    "@umijs/fabric": "^1.2.12",
+    "babel-plugin-import": "^1.13.3",
+    "commitizen": "^4.0.3",
+    "cpr": "^3.0.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "doctoc": "^1.4.0",
+    "dumi": "^1.0.13",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "gh-pages": "^3.2.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-less": "^4.0.1",
+    "husky": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-enzyme": "^7.1.2",
+    "jest-transform-stub": "^2.0.0",
+    "less": "^3.10.3",
+    "lint-staged": "^9.5.0",
+    "np": "^7.5.0",
+    "plop": "^2.6.0",
+    "prettier": "^1.19.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "rimraf": "^3.0.0",
+    "serve": "^12.0.0",
+    "snapshot-diff": "^0.6.1",
+    "through2": "^3.0.1",
+    "ts-jest": "^24.2.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.7",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "classnames": "^2.3.1",
+    "prop-types": "^15.7.2",
+    "react-json-view": "^1.21.3",
+    "react-select": "^5.2.1"
+  },
+  "resolutions": {
+    "@types/react": "16.14.10",
+    "@types/react-dom": "16.9.13"
+  }
 }

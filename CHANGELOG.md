@@ -1,6 +1,24 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+### [0.1.0](https://github.com/nuwa-design/nuwa-design/release/v0.1.0) (2021-11-27)
+
+### Features
+
+* 🎸 排版类组件全新上线，新增 `Typograhy`、`Text`、`Link` 组件，使用方式详见 [Typography 排版](https://nuwa.design/components/typography)。
+
+### Bug Fixes
+
+* 🐛 修复按钮组件 `Button` 自动 `import` 样式，导致按需加载失败的问题。
+* 🐛 修复按钮组件 `Button` 属性 `customTag` 无法被正确识别的问题。
+
+### Docs
+
+* ✏️ 上线排版类组件功能文档。
+* ✏️ 部分文档描述文案修改。
+
+### Others
+
+* 🤖 组件库框架全新设计，优化打包流程，提升研发规范。
 
 ### [0.0.2](https://github.com/nuwa-design/nuwa-design/compare/v0.0.2-alpha.3...v0.0.2) (2021-11-24)
 
