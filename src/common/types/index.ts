@@ -13,9 +13,6 @@ export const ThemeColorArr = [
   'info',
   'warning',
   'danger',
-  'brand',
-  'light',
-  'dark',
 ] as const;
 
 // 通用尺寸配置类型

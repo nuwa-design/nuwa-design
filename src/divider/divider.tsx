@@ -35,7 +35,7 @@ const Divider: React.FC<IDividerProps> = (props: IDividerProps) => {
   return (
     <div className={classNames(innerCls, className)}>
       <span />
-      <span className={innerTextCls}>{children}</span>
+      {children && <span className={innerTextCls}>{children}</span>}
       <span />
     </div>
   );

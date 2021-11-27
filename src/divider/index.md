@@ -25,7 +25,7 @@ group:
 ```tsx
 /**
  * title: 基础分隔线
- * description: 只需要在 `Divider` 组件中设置文本或组件，即可实现基础的分隔线功能。
+ * description: 只需要在 `Divider` 组件中设置文本或组件（或空），即可实现基础的分隔线功能。
  * hideActions: '["CSB"]'
  */
 import React from "react";
@@ -34,6 +34,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 export default () => <>
+  <Divider /><br /><br />
   <Divider>Basic Divider</Divider><br /><br />
   <Divider><FontAwesomeIcon icon={faHome} /> Home</Divider>
 </>;
