@@ -4,9 +4,55 @@
 @import '../../style/variable';
 @import './mixins/index';
 
-.row {
-  .make-row();
-  > * {
-    .make-col-ready();
+// Container widths
+.@{grid-prefix-cls}-container {
+  .container-fixed();
+
+  @media (min-width: @nuwa-screen-sm-min) {
+    width: @nuwa-container-sm;
   }
+  @media (min-width: @nuwa-screen-md-min) {
+    width: @nuwa-container-md;
+  }
+  @media (min-width: @nuwa-screen-lg-min) {
+    width: @nuwa-container-lg;
+  }
+}
+
+
+// Fluid container
+.@{grid-prefix-cls}-container-fluid {
+  .container-fixed();
+}
+
+
+// Row
+.@{grid-prefix-cls}-row {
+  .make-row();
+}
+
+
+// Columns
+.make-grid-columns();
+
+
+// Extra small grid
+.make-grid(xs);
+
+
+// Small grid
+@media (min-width: @nuwa-screen-sm-min) {
+  .make-grid(sm);
+}
+
+
+// Medium grid
+@media (min-width: @nuwa-screen-md-min) {
+  .make-grid(md);
+}
+
+
+// Large grid
+@media (min-width: @nuwa-screen-lg-min) {
+  .make-grid(lg);
 }

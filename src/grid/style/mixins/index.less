@@ -1,30 +1,6 @@
 /**
   Grid Mixins
  */
-
-.make-row(@gutter: @nuwa-grid-gutter-width) {
-  --nuwa_grid-gutter-x: @gutter;
-  --nuwa_grid-gutter-y: 0;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--nuwa_grid-gutter-y));
-  margin-right: calc(-.5 * var(--nuwa_grid-gutter-x));
-  margin-left: calc(-.5 * var(--nuwa_grid-gutter-x));
-}
-
-.make-col-ready() {
-  box-sizing: @nuwa-grid-box-sizing;
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%; // Prevent `.col-auto`, `.col` (& responsive variants) from breaking out the grid
-  padding-right: calc(var(--nuwa_grid-gutter-x) * .5); // stylelint-disable-line function-disallowed-list
-  padding-left: calc(var(--nuwa_grid-gutter-x) * .5); // stylelint-disable-line function-disallowed-list
-  margin-top: var(--nuwa_grid-gutter-y);
-}
-
-.make-grid-columns(@columns: @nuwa-grid-columns, @gutter: @nuwa-grid-gutter-width, @breakpoints: @nuwa-grid-breakpoints) {
-  each(@breakpoints, {
-    @breakpoint: @key;
-
-  });
-}
+@import 'framework';
+@import 'grid';
+@import 'responsive';

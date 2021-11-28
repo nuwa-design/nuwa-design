@@ -5,20 +5,12 @@
  * @Date 2021/11/28 00:13:12
  */
 import React from 'react';
-import propTypes from 'prop-types';
 import { IGridProps } from './interface';
 
-const Grid: React.FC<IGridProps> = (props: IGridProps) => {
+const Grid: React.FC<IGridProps> = () => <>Grid</>;
 
-  return <>Grid</>;
-};
+Grid.propTypes = {};
 
-Grid.propTypes = {
-
-};
-
-Grid.defaultProps = {
-
-}
+Grid.defaultProps = {};
 
 export default Grid;

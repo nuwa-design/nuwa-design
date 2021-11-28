@@ -5,20 +5,12 @@
  * @Date 2021/11/28 00:14:05
  */
 import React from 'react';
-import propTypes from 'prop-types';
 import { IRowProps } from './interface';
 
-const Row: React.FC<IRowProps> = (props: IRowProps) => {
+const Row: React.FC<IRowProps> = () => <>Grid</>;
 
-  return <>Grid</>;
-};
+Row.propTypes = {};
 
-Row.propTypes = {
-
-};
-
-Row.defaultProps = {
-
-}
+Row.defaultProps = {};
 
 export default Row;
