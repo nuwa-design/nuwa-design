@@ -20,6 +20,7 @@ export const getGlobalStyleConfig: () => IGlobalStyleConfig = () => {
     titlePrefix: variables.titlePrefix || `${nuwaPrefix}_title`,
     linkPrefix: variables.linkPrefix || `${nuwaPrefix}_link`,
     dividerPrefix: variables.dividerPrefix || `${nuwaPrefix}_divider`,
+    gridPrefix: variables.gridPrefix || `${nuwaPrefix}_grid`,
   };
   return config;
 };

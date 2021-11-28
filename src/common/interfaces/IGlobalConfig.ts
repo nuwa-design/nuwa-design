@@ -12,6 +12,7 @@ export interface IGlobalStyleConfig {
   linkPrefix?: string;
   btnPrefix?: string;
   dividerPrefix?: string;
+  gridPrefix?: string;
 }
 
 export default {};

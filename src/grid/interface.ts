@@ -4,9 +4,23 @@
  * @Author qulongjun <contact@nuwa.design>
  * @Date 2021/11/28 00:12:24
  */
+import { ICommonProps } from '../common/interfaces';
 
 export interface IGridProps {}
 
-export interface IRowProps extends IGridProps {}
+export interface IRowProps extends ICommonProps {}
 
-export interface IColProps extends IGridProps {}
+export type IColumn = {
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  all?: number;
+};
+
+export interface IColProps extends ICommonProps {
+  offset?: IColumn;
+  range?: IColumn;
+  push?: IColumn;
+  pull?: IColumn;
+}
