@@ -5,9 +5,18 @@
  * @Date 2021/11/28 00:14:05
  */
 import React from 'react';
+import classNames from 'classnames';
 import { IRowProps } from './interface';
+import { getGlobalStyleConfig } from '../common/utils';
 
-const Row: React.FC<IRowProps> = () => <>Grid</>;
+const { gridPrefix } = getGlobalStyleConfig();
+
+const Row: React.FC<IRowProps> = (props: IRowProps) => {
+  const { className, children } = props;
+  const innerCls = classNames(`${gridPrefix}-row`);
+
+  return <div className={classNames(innerCls, className)}>{children}</div>;
+};
 
 Row.propTypes = {};
 
