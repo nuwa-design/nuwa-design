@@ -1,0 +1,193 @@
+/**
+  Responsive: Utility classes
+ */
+
+@import '../../style/variable';
+@import './mixins/index';
+
+@-ms-viewport {
+  width: device-width;
+}
+
+// Visibility utilities
+.@{grid-prefix-cls}-visible-xs,
+.@{grid-prefix-cls}-visible-sm,
+.@{grid-prefix-cls}-visible-md,
+.@{grid-prefix-cls}-visible-lg {
+  .responsive-invisibility();
+}
+
+.@{grid-prefix-cls}-visible-xs-block,
+.@{grid-prefix-cls}-visible-xs-inline,
+.@{grid-prefix-cls}-visible-xs-inline-block,
+.@{grid-prefix-cls}-visible-sm-block,
+.@{grid-prefix-cls}-visible-sm-inline,
+.@{grid-prefix-cls}-visible-sm-inline-block,
+.@{grid-prefix-cls}-visible-md-block,
+.@{grid-prefix-cls}-visible-md-inline,
+.@{grid-prefix-cls}-visible-md-inline-block,
+.@{grid-prefix-cls}-visible-lg-block,
+.@{grid-prefix-cls}-visible-lg-inline,
+.@{grid-prefix-cls}-visible-lg-inline-block {
+  display: none !important;
+}
+
+.@{grid-prefix-cls}-visible-xs {
+  @media (max-width: @nuwa-screen-xs-max) {
+    .responsive-visibility();
+  }
+}
+
+.@{grid-prefix-cls}-visible-xs-block {
+  @media (max-width: @nuwa-screen-xs-max) {
+    display: block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-xs-inline {
+  @media (max-width: @nuwa-screen-xs-max) {
+    display: inline !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-xs-inline-block {
+  @media (max-width: @nuwa-screen-xs-max) {
+    display: inline-block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-sm {
+  @media (min-width: @nuwa-screen-sm-min) and (max-width: @nuwa-screen-sm-max) {
+    .responsive-visibility();
+  }
+}
+
+.@{grid-prefix-cls}-visible-sm-block {
+  @media (min-width: @nuwa-screen-sm-min) and (max-width: @nuwa-screen-sm-max) {
+    display: block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-sm-inline {
+  @media (min-width: @nuwa-screen-sm-min) and (max-width: @nuwa-screen-sm-max) {
+    display: inline !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-sm-inline-block {
+  @media (min-width: @nuwa-screen-sm-min) and (max-width: @nuwa-screen-sm-max) {
+    display: inline-block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-md {
+  @media (min-width: @nuwa-screen-md-min) and (max-width: @nuwa-screen-md-max) {
+    .responsive-visibility();
+  }
+}
+
+.@{grid-prefix-cls}-visible-md-block {
+  @media (min-width: @nuwa-screen-md-min) and (max-width: @nuwa-screen-md-max) {
+    display: block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-md-inline {
+  @media (min-width: @nuwa-screen-md-min) and (max-width: @nuwa-screen-md-max) {
+    display: inline !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-md-inline-block {
+  @media (min-width: @nuwa-screen-md-min) and (max-width: @nuwa-screen-md-max) {
+    display: inline-block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-lg {
+  @media (min-width: @nuwa-screen-lg-min) {
+    .responsive-visibility();
+  }
+}
+
+.@{grid-prefix-cls}-visible-lg-block {
+  @media (min-width: @nuwa-screen-lg-min) {
+    display: block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-lg-inline {
+  @media (min-width: @nuwa-screen-lg-min) {
+    display: inline !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-lg-inline-block {
+  @media (min-width: @nuwa-screen-lg-min) {
+    display: inline-block !important;
+  }
+}
+
+.@{grid-prefix-cls}-hidden-xs {
+  @media (max-width: @nuwa-screen-xs-max) {
+    .responsive-invisibility();
+  }
+}
+
+.@{grid-prefix-cls}-hidden-sm {
+  @media (min-width: @nuwa-screen-sm-min) and (max-width: @nuwa-screen-sm-max) {
+    .responsive-invisibility();
+  }
+}
+
+.@{grid-prefix-cls}-hidden-md {
+  @media (min-width: @nuwa-screen-md-min) and (max-width: @nuwa-screen-md-max) {
+    .responsive-invisibility();
+  }
+}
+
+.@{grid-prefix-cls}-hidden-lg {
+  @media (min-width: @nuwa-screen-lg-min) {
+    .responsive-invisibility();
+  }
+}
+
+
+// Print utilities
+.@{grid-prefix-cls}-visible-print {
+  .responsive-invisibility();
+
+  @media print {
+    .responsive-visibility();
+  }
+}
+
+.@{grid-prefix-cls}-visible-print-block {
+  display: none !important;
+
+  @media print {
+    display: block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-print-inline {
+  display: none !important;
+
+  @media print {
+    display: inline !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-print-inline-block {
+  display: none !important;
+
+  @media print {
+    display: inline-block !important;
+  }
+}
+
+.@{grid-prefix-cls}-hidden-print {
+  @media print {
+    .responsive-invisibility();
+  }
+}

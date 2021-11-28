@@ -7,11 +7,6 @@
 
 export interface IGridProps {}
 
+export interface IRowProps extends IGridProps {}
 
-export interface IRowProps extends IGridProps {
-
-}
-
-export interface IColProps extends IGridProps {
-
-}
+export interface IColProps extends IGridProps {}
