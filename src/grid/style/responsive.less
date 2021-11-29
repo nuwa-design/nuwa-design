@@ -205,13 +205,13 @@
 }
 
 .@{grid-prefix-cls}-hidden-lg {
-  @media (min-width: @nuwa-screen-lg-min) {
+  @media (min-width: @nuwa-screen-lg-min) and (max-width: @nuwa-screen-lg-max) {
     .responsive-invisibility();
   }
 }
 
 .@{grid-prefix-cls}-hidden-xl {
-  @media (min-width: @nuwa-screen-xl-min) {
+  @media (min-width: @nuwa-screen-xl-min) and (max-width: @nuwa-screen-xl-max) {
     .responsive-invisibility();
   }
 }

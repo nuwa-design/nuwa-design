@@ -12,9 +12,10 @@ import { getGlobalStyleConfig } from '../common/utils';
 const { gridPrefix } = getGlobalStyleConfig();
 
 const Col: React.FC<IColProps> = (props: IColProps) => {
-  const { range, offset, push, pull, className, children } = props;
+  const { range, offset, push, pull, hidden, className, children } = props;
   const dynamicCls: string[] = [];
 
+  // Range
   if (range) {
     if (typeof range === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-${range}`);
@@ -25,6 +26,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     }
   }
 
+  // Offset
   if (offset) {
     if (typeof offset === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-offset-${offset}`);
@@ -35,6 +37,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     }
   }
 
+  // Push
   if (push) {
     if (typeof push === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-push-${push}`);
@@ -45,6 +48,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     }
   }
 
+  // Pull
   if (pull) {
     if (typeof pull === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-pull-${pull}`);
@@ -53,6 +57,15 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
         dynamicCls.push(`${gridPrefix}-col-${item}-pull-${pull[item]}`);
       });
     }
+  }
+
+  // Hidden
+  if (Array.isArray(hidden) && hidden.length !== 0) {
+    hidden.forEach(hideMode => {
+      if (hideMode) {
+        dynamicCls.push(`${gridPrefix}-hidden-${hideMode}`);
+      }
+    });
   }
 
   const innerCls = classNames(dynamicCls);
