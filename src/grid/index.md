@@ -229,5 +229,51 @@ export default () => <>
 ```
 
 <Alert type="info">
-  尝试缩放您的浏览器尺寸，即可看到响应式效果！
+  Tips: 尝试缩放您的浏览器，即可看到响应式效果！
 </Alert>
+
+
+
+#### 隐藏分栏
+
+```tsx
+/**
+ * title: 响应式
+ * description: 在不同分辨率设备上，可能需要展示对应的模块，可以使用 `hidden` 隐藏不必要展示的模块。
+ * hideActions: '["CSB"]'
+ */
+import React from 'react';
+import { Grid } from 'nuwa-design';
+import Container from './demo/Container';
+
+export default () => <>
+ <Grid.Row>
+  <Grid.Col className="bg-purple-dark" range={6} hidden={['xxl']}>
+   <Container bgColor="dark">
+    COL-6 HIDDEN-WHEN-XXL
+   </Container>
+  </Grid.Col>
+  <Grid.Col className="bg-purple-light" range={6} hidden={['xl']}>
+   <Container bgColor="light">
+    COL-6 HIDDEN-WHEN-XL
+   </Container>
+  </Grid.Col>
+   <Grid.Col className="bg-purple-dark" range={6} hidden={['lg']}>
+     <Container bgColor="dark">
+       COL-6 HIDDEN-WHEN-LG
+     </Container>
+   </Grid.Col>
+   <Grid.Col className="bg-purple-light" range={6} hidden={['md']}>
+     <Container bgColor="light">
+       COL-6 HIDDEN-WHEN-MD
+     </Container>
+   </Grid.Col>
+ </Grid.Row>
+</>;
+```
+
+<Alert type="info">
+  Tips: 尝试缩放您的浏览器，即可看到响应式效果！
+</Alert>
+
+<API src="./col.tsx"></API>
