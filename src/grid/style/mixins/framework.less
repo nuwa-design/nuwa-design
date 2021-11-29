@@ -5,11 +5,11 @@
 
 .make-grid-columns() {
   .col(@index) {
-    @item: ~".@{grid-prefix-cls}-col-xs-@{index}, .@{grid-prefix-cls}-col-sm-@{index}, .@{grid-prefix-cls}-col-md-@{index}, .@{grid-prefix-cls}-col-lg-@{index}";
+    @item: ~".@{grid-prefix-cls}-col-all-@{index}, .@{grid-prefix-cls}-col-xs-@{index}, .@{grid-prefix-cls}-col-sm-@{index}, .@{grid-prefix-cls}-col-md-@{index}, .@{grid-prefix-cls}-col-lg-@{index}, .@{grid-prefix-cls}-col-xl-@{index}, .@{grid-prefix-cls}-col-xxl-@{index}";
     .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @nuwa-grid-columns) {
-    @item: ~".@{grid-prefix-cls}-col-xs-@{index}, .@{grid-prefix-cls}-col-sm-@{index}, .@{grid-prefix-cls}-col-md-@{index}, .@{grid-prefix-cls}-col-lg-@{index}";
+    @item: ~".@{grid-prefix-cls}-col-all-@{index}, .@{grid-prefix-cls}-col-xs-@{index}, .@{grid-prefix-cls}-col-sm-@{index}, .@{grid-prefix-cls}-col-md-@{index}, .@{grid-prefix-cls}-col-lg-@{index}, .@{grid-prefix-cls}-col-xl-@{index}, .@{grid-prefix-cls}-col-xxl-@{index}";
     .col((@index + 1), ~"@{list}, @{item}");
   }
   .col(@index, @list) when (@index > @nuwa-grid-columns) {

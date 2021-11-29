@@ -19,8 +19,8 @@ export type IColumn = {
 };
 
 export interface IColProps extends ICommonProps {
-  offset?: IColumn;
-  range?: IColumn;
-  push?: IColumn;
-  pull?: IColumn;
+  offset?: IColumn | number;
+  range?: IColumn | number;
+  push?: IColumn | number;
+  pull?: IColumn | number;
 }

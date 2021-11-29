@@ -4,6 +4,7 @@ const less = require('gulp-less');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const through2 = require('through2');
+const concat = require('gulp-concat');
 
 const paths = {
   dest: {
@@ -92,10 +93,21 @@ function less2css() {
     .pipe(autoprefixer()) // 根据browserslistrc增加前缀
     .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
     .pipe(gulp.dest(paths.dest.lib))
-    .pipe(gulp.dest(paths.dest.esm));
+    .pipe(gulp.dest(paths.dest.esm))
 }
 
-const build = gulp.parallel(buildScripts, copyLess, less2css);
+function css2combine() {
+  return gulp
+    .src(paths.styles)
+    .pipe(less())
+    .pipe(autoprefixer()) // 根据browserslistrc增加前缀
+    .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
+    .pipe(concat('index.css'))
+    .pipe(gulp.dest(paths.dest.lib))
+    .pipe(gulp.dest(paths.dest.esm))
+}
+
+const build = gulp.parallel(buildScripts, copyLess, less2css, css2combine);
 
 exports.build = build;
 
