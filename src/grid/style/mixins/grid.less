@@ -2,6 +2,7 @@
   Grid system
   Generate semantic grid columns with these mixins.
  */
+@import "../../../style/mixins/index";
 
 // Centered container element
 .container-fixed(@gutter: @nuwa-grid-gutter-width) {
@@ -9,14 +10,16 @@
   margin-left: auto;
   padding-left: floor((@gutter / 2));
   padding-right: ceil((@gutter / 2));
-  &:extend(.clearfix all);
+  //&:extend(.clearfix all);
+  .clearfix();
 }
 
 // Creates a wrapper for a series of columns
 .make-row(@gutter: @nuwa-grid-gutter-width) {
   margin-left: ceil((@gutter / -2));
   margin-right: floor((@gutter / -2));
-  &:extend(.clearfix all);
+  //&:extend(.clearfix all);
+  .clearfix();
 }
 
 // Generate the extra small columns
@@ -130,6 +133,69 @@
 
 .make-lg-column-pull(@columns) {
   @media (min-width: @nuwa-screen-lg-min) {
+    right: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+
+// Generate the large columns
+.make-xl-column(@columns; @gutter: @nuwa-grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @nuwa-screen-xl-min) {
+    float: left;
+    width: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+.make-xl-column-offset(@columns) {
+  @media (min-width: @nuwa-screen-xl-min) {
+    margin-left: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+.make-xl-column-push(@columns) {
+  @media (min-width: @nuwa-screen-xl-min) {
+    left: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+.make-xl-column-pull(@columns) {
+  @media (min-width: @nuwa-screen-xl-min) {
+    right: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+// Generate the large columns
+.make-xxl-column(@columns; @gutter: @nuwa-grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @nuwa-screen-xxl-min) {
+    float: left;
+    width: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+.make-xxl-column-offset(@columns) {
+  @media (min-width: @nuwa-screen-xxl-min) {
+    margin-left: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+.make-xxl-column-push(@columns) {
+  @media (min-width: @nuwa-screen-xxl-min) {
+    left: percentage((@columns / @nuwa-grid-columns));
+  }
+}
+
+.make-xxl-column-pull(@columns) {
+  @media (min-width: @nuwa-screen-xxl-min) {
     right: percentage((@columns / @nuwa-grid-columns));
   }
 }

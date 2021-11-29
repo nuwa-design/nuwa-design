@@ -2,25 +2,36 @@
   Grid Variables
  */
 
-@nuwa-screen-sm: 768px;
-@nuwa-screen-md: 992px;
-@nuwa-screen-lg: 1200px;
+@nuwa-screen-sm: 576px;
+@nuwa-screen-md: 768px;
+@nuwa-screen-lg: 992px;
+@nuwa-screen-xl: 1200px;
+@nuwa-screen-xxl: 1400px;
 
 @nuwa-screen-sm-min: @nuwa-screen-sm;
 @nuwa-screen-md-min: @nuwa-screen-md;
 @nuwa-screen-lg-min: @nuwa-screen-lg;
+@nuwa-screen-xl-min: @nuwa-screen-xl;
+@nuwa-screen-xxl-min: @nuwa-screen-xxl;
 
 @nuwa-screen-xs-max: (@nuwa-screen-sm-min - 1);
 @nuwa-screen-sm-max: (@nuwa-screen-md-min - 1);
 @nuwa-screen-md-max: (@nuwa-screen-lg-min - 1);
+@nuwa-screen-lg-max: (@nuwa-screen-xl-min - 1);
+@nuwa-screen-xl-max: (@nuwa-screen-xxl-min - 1);
 
-@nuwa-grid-columns: 12;
+@nuwa-grid-columns: 24;
 @nuwa-grid-gutter-width: 30px;
 
-@nuwa-container-tablet: (720px + @nuwa-grid-gutter-width);
-@nuwa-container-desktop: (940px + @nuwa-grid-gutter-width);
-@nuwa-container-large-desktop: (1140px + @nuwa-grid-gutter-width);
+@nuwa-container-tablet: (510px + @nuwa-grid-gutter-width);
+@nuwa-container-desktop: (690px + @nuwa-grid-gutter-width);
+@nuwa-container-large-desktop: (930px + @nuwa-grid-gutter-width);
+@nuwa-container-extra-large-desktop: (1110px + @nuwa-grid-gutter-width);
+@nuwa-container-extra-extra-large-desktop: (1290px + @nuwa-grid-gutter-width);
+
 
 @nuwa-container-sm: @nuwa-container-tablet;
 @nuwa-container-md: @nuwa-container-desktop;
 @nuwa-container-lg: @nuwa-container-large-desktop;
+@nuwa-container-xl: @nuwa-container-extra-large-desktop;
+@nuwa-container-xxl: @nuwa-container-extra-extra-large-desktop;

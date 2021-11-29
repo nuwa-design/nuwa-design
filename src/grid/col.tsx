@@ -16,27 +16,43 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
   const dynamicCls: string[] = [];
 
   if (range) {
-    (Object.keys(range) as (keyof IColumn)[]).forEach(item => {
-      dynamicCls.push(`${gridPrefix}-col-${item}-${range[item]}`);
-    });
+    if (typeof range === 'number') {
+      dynamicCls.push(`${gridPrefix}-col-all-${range}`);
+    } else {
+      (Object.keys(range) as (keyof IColumn)[]).forEach(item => {
+        dynamicCls.push(`${gridPrefix}-col-${item}-${range[item]}`);
+      });
+    }
   }
 
   if (offset) {
-    (Object.keys(offset) as (keyof IColumn)[]).forEach(item => {
-      dynamicCls.push(`${gridPrefix}-col-${item}-offset-${offset[item]}`);
-    });
+    if (typeof offset === 'number') {
+      dynamicCls.push(`${gridPrefix}-col-all-offset-${offset}`);
+    } else {
+      (Object.keys(offset) as (keyof IColumn)[]).forEach(item => {
+        dynamicCls.push(`${gridPrefix}-col-${item}-offset-${offset[item]}`);
+      });
+    }
   }
 
   if (push) {
-    (Object.keys(push) as (keyof IColumn)[]).forEach(item => {
-      dynamicCls.push(`${gridPrefix}-col-${item}-push-${push[item]}`);
-    });
+    if (typeof push === 'number') {
+      dynamicCls.push(`${gridPrefix}-col-all-push-${push}`);
+    } else {
+      (Object.keys(push) as (keyof IColumn)[]).forEach(item => {
+        dynamicCls.push(`${gridPrefix}-col-${item}-push-${push[item]}`);
+      });
+    }
   }
 
   if (pull) {
-    (Object.keys(pull) as (keyof IColumn)[]).forEach(item => {
-      dynamicCls.push(`${gridPrefix}-col-${item}-pull-${pull[item]}`);
-    });
+    if (typeof pull === 'number') {
+      dynamicCls.push(`${gridPrefix}-col-all-pull-${pull}`);
+    } else {
+      (Object.keys(pull) as (keyof IColumn)[]).forEach(item => {
+        dynamicCls.push(`${gridPrefix}-col-${item}-pull-${pull[item]}`);
+      });
+    }
   }
 
   const innerCls = classNames(dynamicCls);

@@ -13,7 +13,9 @@
 .@{grid-prefix-cls}-visible-xs,
 .@{grid-prefix-cls}-visible-sm,
 .@{grid-prefix-cls}-visible-md,
-.@{grid-prefix-cls}-visible-lg {
+.@{grid-prefix-cls}-visible-lg,
+.@{grid-prefix-cls}-visible-xl,
+.@{grid-prefix-cls}-visible-xxl {
   .responsive-invisibility();
 }
 
@@ -28,7 +30,13 @@
 .@{grid-prefix-cls}-visible-md-inline-block,
 .@{grid-prefix-cls}-visible-lg-block,
 .@{grid-prefix-cls}-visible-lg-inline,
-.@{grid-prefix-cls}-visible-lg-inline-block {
+.@{grid-prefix-cls}-visible-lg-inline-block,
+.@{grid-prefix-cls}-visible-xl-block,
+.@{grid-prefix-cls}-visible-xl-inline,
+.@{grid-prefix-cls}-visible-xl-inline-block,
+.@{grid-prefix-cls}-visible-xxl-block,
+.@{grid-prefix-cls}-visible-xxl-inline,
+.@{grid-prefix-cls}-visible-xxl-inline-block {
   display: none !important;
 }
 
@@ -128,6 +136,56 @@
   }
 }
 
+
+.@{grid-prefix-cls}-visible-xl {
+  @media (min-width: @nuwa-screen-xl-min) {
+    .responsive-visibility();
+  }
+}
+
+.@{grid-prefix-cls}-visible-xl-block {
+  @media (min-width: @nuwa-screen-xl-min) {
+    display: block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-xl-inline {
+  @media (min-width: @nuwa-screen-xl-min) {
+    display: inline !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-xl-inline-block {
+  @media (min-width: @nuwa-screen-xl-min) {
+    display: inline-block !important;
+  }
+}
+
+
+.@{grid-prefix-cls}-visible-xxl {
+  @media (min-width: @nuwa-screen-xxl-min) {
+    .responsive-visibility();
+  }
+}
+
+.@{grid-prefix-cls}-visible-xxl-block {
+  @media (min-width: @nuwa-screen-xxl-min) {
+    display: block !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-xxl-inline {
+  @media (min-width: @nuwa-screen-xxl-min) {
+    display: inline !important;
+  }
+}
+
+.@{grid-prefix-cls}-visible-xxl-inline-block {
+  @media (min-width: @nuwa-screen-xxl-min) {
+    display: inline-block !important;
+  }
+}
+
 .@{grid-prefix-cls}-hidden-xs {
   @media (max-width: @nuwa-screen-xs-max) {
     .responsive-invisibility();
@@ -148,6 +206,18 @@
 
 .@{grid-prefix-cls}-hidden-lg {
   @media (min-width: @nuwa-screen-lg-min) {
+    .responsive-invisibility();
+  }
+}
+
+.@{grid-prefix-cls}-hidden-xl {
+  @media (min-width: @nuwa-screen-xl-min) {
+    .responsive-invisibility();
+  }
+}
+
+.@{grid-prefix-cls}-hidden-xxl {
+  @media (min-width: @nuwa-screen-xxl-min) {
     .responsive-invisibility();
   }
 }

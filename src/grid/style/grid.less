@@ -17,6 +17,12 @@
   @media (min-width: @nuwa-screen-lg-min) {
     width: @nuwa-container-lg;
   }
+  @media (min-width: @nuwa-screen-xl-min) {
+    width: @nuwa-container-xl;
+  }
+  @media (min-width: @nuwa-screen-xxl-min) {
+    width: @nuwa-container-xxl;
+  }
 }
 
 
@@ -56,5 +62,17 @@
 @media (min-width: @nuwa-screen-lg-min) {
   .make-grid(lg);
 }
+
+// Extra Large grid
+@media (min-width: @nuwa-screen-xl-min) {
+  .make-grid(xl);
+}
+
+
+// Extra Extra Large grid
+@media (min-width: @nuwa-screen-xxl-min) {
+  .make-grid(xxl);
+}
+
 
 .make-grid(all);
