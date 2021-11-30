@@ -10,30 +10,24 @@ export interface IGridProps {}
 
 export interface IRowProps extends ICommonProps {}
 
-export type IColumn = {
-  xs?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
-  xxl?: number;
-  all?: number;
-};
+export const TypeArr = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'] as const;
+
+export type IType = typeof TypeArr[number];
 
 export const BlockArr = ['inline', 'inline-block', 'block'] as const;
 export type BlockType = typeof BlockArr[number];
 
-export type IVisible = [keyof IColumn, BlockType];
-
 export interface IColProps extends ICommonProps {
   /** 当前分栏的数量 */
-  range?: IColumn | number;
+  range?: Record<IType, number> | number;
   /** 分栏的偏移量 */
-  offset?: IColumn | number;
+  offset?: Record<IType, number> | number;
   /** 分栏的排序：向左排序 */
-  push?: IColumn | number;
+  push?: Record<IType, number> | number;
   /** 分栏的排序：向右排序 */
-  pull?: IColumn | number;
+  pull?: Record<IType, number> | number;
   /** 需要隐藏的分栏 */
-  hidden?: (keyof IColumn)[];
+  hidden?: IType[];
+  /** 需要可见的分栏 */
+  visible?: [IType, BlockType][] | IType[];
 }
