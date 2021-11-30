@@ -12,7 +12,7 @@ import { getGlobalStyleConfig } from '../common/utils';
 const { gridPrefix } = getGlobalStyleConfig();
 
 const Col: React.FC<IColProps> = (props: IColProps) => {
-  const { range, offset, push, pull, hidden, visible, className, children } = props;
+  const { range, offset, push, pull, hidden, visible, className, children, onClick } = props;
   const dynamicCls: string[] = [];
 
   // Range
@@ -59,7 +59,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     }
   }
 
-  // Hidden
+  // 条件隐藏
   if (Array.isArray(hidden) && hidden.length !== 0) {
     hidden.forEach(hideMode => {
       if (hideMode) {
@@ -68,6 +68,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     });
   }
 
+  // 条件可见
   if (Array.isArray(visible) && visible.length !== 0) {
     visible.forEach((visibleMode: [IType, BlockType] | IType) => {
       if (Array.isArray(visibleMode) && visibleMode.length === 2) {
@@ -81,9 +82,14 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     });
   }
 
+  // 内部 ClassNames
   const innerCls = classNames(dynamicCls);
 
-  return <div className={classNames(innerCls, className)}>{children}</div>;
+  return (
+    <div className={classNames(innerCls, className)} onClick={onClick}>
+      {children}
+    </div>
+  );
 };
 
 Col.propTypes = {};

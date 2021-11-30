@@ -319,4 +319,45 @@ export default () => <>
   Tips: 尝试缩放您的浏览器，即可看到响应式效果！
 </Alert>
 
-<API src="./col.tsx"></API>
+<API hideTitle src="./row.tsx"></API>
+
+<API hideTitle src="./col.tsx"></API>
+
+#### 分辨率规则
+
+我们预设了一组针对屏幕分辨率的判定规则（`BreakPoints`），若当前规则不符合您的需求，可以通过样式覆盖的方式修改。规则名称如下：
+
+* Extra small (xs)
+* Small (sm)
+* Medium (md)
+* Large (lg)
+* Extra large (xl)
+* Extra extra large (xxl)
+
+|  名称   | xs | sm | md | lg | xl | xxl |
+| :----: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 尺寸    | <576px | ≥576px | ≥768px | ≥992px | ≥1200px | ≥1400px |
+
+#### ColData
+
+`Col` 组件的 `range`、`offset`、`pull`、`push` 属性支持传入 `ColData` 类型数据，`ColData` 支持设置如下值：
+
+* `number` 类型：通过直接设置 1-24 中任意数字，即可在 **所有** 屏幕分辨率下生效。例如： `range={ 12 }` 、 `offset={3}` 等。
+* `Record` 类型：通过设置一个 **分辨率规则** 与 **分栏数量** 的映射关系（`{ 分辨率规则: 分栏数量 }`），即可在 **相应** 屏幕分辨率下生效。例如：
+
+```json
+ {
+   "xxl": 12,
+   "xl" : 10,
+   "lg" : 8,
+ }
+```
+
+#### ColVisible
+
+`Col` 属性支持设置 **条件显示** 属性，在满足一定屏幕分辨率下，可以显示当前模块。`ColVisible` 支持设置如下值：
+
+* `string[]` 类型：通过直接设置一个 **分辨率规则** 数组，可以为 `xxl`、`xl`、`lg`、`md`、`sm`、`xs` 中一个或多个。例如： `visible={['md', 'sm'']}`。
+* `Record[]` 类型：通过同时设置 **分辨率规则** 和 **展示规则**，可以显式管理当前展示当模块。例如： `visible={[['md', 'inline-block'], ['sm', 'inline'']]}`
+
+**展示规则**：支持设置如下属性： `block`（块状展示）、 `inline`（行内样式）、 `inline-block`(行内块状样式)
