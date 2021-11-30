@@ -6,13 +6,13 @@
  */
 import React from 'react';
 import classNames from 'classnames';
-import { IColProps, IColumn } from './interface';
+import { BlockArr, BlockType, IColProps, IType, TypeArr } from './interface';
 import { getGlobalStyleConfig } from '../common/utils';
 
 const { gridPrefix } = getGlobalStyleConfig();
 
 const Col: React.FC<IColProps> = (props: IColProps) => {
-  const { range, offset, push, pull, hidden, className, children } = props;
+  const { range, offset, push, pull, hidden, visible, className, children } = props;
   const dynamicCls: string[] = [];
 
   // Range
@@ -20,7 +20,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     if (typeof range === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-${range}`);
     } else {
-      (Object.keys(range) as (keyof IColumn)[]).forEach(item => {
+      (Object.keys(range) as IType[]).forEach(item => {
         dynamicCls.push(`${gridPrefix}-col-${item}-${range[item]}`);
       });
     }
@@ -31,7 +31,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     if (typeof offset === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-offset-${offset}`);
     } else {
-      (Object.keys(offset) as (keyof IColumn)[]).forEach(item => {
+      (Object.keys(offset) as IType[]).forEach(item => {
         dynamicCls.push(`${gridPrefix}-col-${item}-offset-${offset[item]}`);
       });
     }
@@ -42,7 +42,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     if (typeof push === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-push-${push}`);
     } else {
-      (Object.keys(push) as (keyof IColumn)[]).forEach(item => {
+      (Object.keys(push) as IType[]).forEach(item => {
         dynamicCls.push(`${gridPrefix}-col-${item}-push-${push[item]}`);
       });
     }
@@ -53,7 +53,7 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     if (typeof pull === 'number') {
       dynamicCls.push(`${gridPrefix}-col-all-pull-${pull}`);
     } else {
-      (Object.keys(pull) as (keyof IColumn)[]).forEach(item => {
+      (Object.keys(pull) as IType[]).forEach(item => {
         dynamicCls.push(`${gridPrefix}-col-${item}-pull-${pull[item]}`);
       });
     }
@@ -64,6 +64,19 @@ const Col: React.FC<IColProps> = (props: IColProps) => {
     hidden.forEach(hideMode => {
       if (hideMode) {
         dynamicCls.push(`${gridPrefix}-hidden-${hideMode}`);
+      }
+    });
+  }
+
+  if (Array.isArray(visible) && visible.length !== 0) {
+    visible.forEach((visibleMode: [IType, BlockType] | IType) => {
+      if (Array.isArray(visibleMode) && visibleMode.length === 2) {
+        const [type, displayType] = visibleMode;
+        if (type && displayType && BlockArr.includes(displayType)) {
+          dynamicCls.push(`${gridPrefix}-visible-${type}-${displayType}`);
+        }
+      } else if (typeof visibleMode === 'string' && TypeArr.includes(visibleMode)) {
+        dynamicCls.push(`${gridPrefix}-visible-${visibleMode}`);
       }
     });
   }
