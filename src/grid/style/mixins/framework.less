@@ -1,0 +1,94 @@
+/**
+  Framework grid generation
+  Used only to generate the correct number of grid classes given
+ */
+
+.make-grid-columns() {
+  .col(@index) {
+    @item: ~".@{grid-prefix-cls}-col-all-@{index}, .@{grid-prefix-cls}-col-xs-@{index}, .@{grid-prefix-cls}-col-sm-@{index}, .@{grid-prefix-cls}-col-md-@{index}, .@{grid-prefix-cls}-col-lg-@{index}, .@{grid-prefix-cls}-col-xl-@{index}, .@{grid-prefix-cls}-col-xxl-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @nuwa-grid-columns) {
+    @item: ~".@{grid-prefix-cls}-col-all-@{index}, .@{grid-prefix-cls}-col-xs-@{index}, .@{grid-prefix-cls}-col-sm-@{index}, .@{grid-prefix-cls}-col-md-@{index}, .@{grid-prefix-cls}-col-lg-@{index}, .@{grid-prefix-cls}-col-xl-@{index}, .@{grid-prefix-cls}-col-xxl-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @nuwa-grid-columns) {
+    @{list} {
+      position: relative;
+      min-height: 1px;
+      padding-left: ceil((@nuwa-grid-gutter-width / 2));
+      padding-right: floor((@nuwa-grid-gutter-width / 2));
+      box-sizing: border-box;
+    }
+  }
+  .col(1);
+}
+
+.float-grid-columns(@class) {
+  .col(@index) {
+    @item: ~".@{grid-prefix-cls}-col-@{class}-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @nuwa-grid-columns) {
+    @item: ~".@{grid-prefix-cls}-col-@{class}-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @nuwa-grid-columns) {
+    @{list} {
+      float: left;
+    }
+  }
+  .col(1);
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .@{grid-prefix-cls}-col-@{class}-@{index} {
+    width: percentage((@index / @nuwa-grid-columns));
+  }
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index > 0) {
+  .@{grid-prefix-cls}-col-@{class}-push-@{index} {
+    left: percentage((@index / @nuwa-grid-columns));
+  }
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = push) and (@index = 0) {
+  .@{grid-prefix-cls}-col-@{class}-push-0 {
+    left: auto;
+  }
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index > 0) {
+  .@{grid-prefix-cls}-col-@{class}-pull-@{index} {
+    right: percentage((@index / @nuwa-grid-columns));
+  }
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = pull) and (@index = 0) {
+  .@{grid-prefix-cls}-col-@{class}-pull-0 {
+    right: auto;
+  }
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = offset) {
+  .@{grid-prefix-cls}-col-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @nuwa-grid-columns));
+  }
+}
+
+// Basic looping in LESS
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-grid-column(@index, @class, @type);
+  // next iteration
+  .loop-grid-columns((@index - 1), @class, @type);
+}
+
+// Create grid for specific class
+.make-grid(@class) {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@nuwa-grid-columns, @class, width);
+  .loop-grid-columns(@nuwa-grid-columns, @class, pull);
+  .loop-grid-columns(@nuwa-grid-columns, @class, push);
+  .loop-grid-columns(@nuwa-grid-columns, @class, offset);
+}

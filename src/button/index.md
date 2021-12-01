@@ -41,15 +41,14 @@ group:
  * title: 基础示例
  * description: 这是一组基础按钮，通过指定不同的 `type` 属性，可实现不同场景的按钮展示。
  * hideActions: '["CSB"]'
- *
  */
 import React, { useCallback } from "react";
 import { Button } from 'nuwa-design';
 
-const onClick = useCallback((e) => {
-    // todo something here
-    console.log('trigger click', e)
-}, []);
+const onClick = (e) => {
+ // todo something here
+ console.log('trigger click', e)
+};
 
 export default () => <>
     <Button type="primary" onClick={onClick}>Primary</Button> &nbsp;

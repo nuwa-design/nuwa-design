@@ -6,6 +6,7 @@
  */
 
 /* PLOP_INJECT_EXPORT */
+export { default as Grid } from './grid';
 export { default as Divider } from './divider';
 export { default as Typography } from './typography';
 export { default as Button } from './button';

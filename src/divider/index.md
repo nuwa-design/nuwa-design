@@ -1,5 +1,6 @@
 ---
 title: Divider 分隔线
+order: 2
 nav:
  path: /components
  title: 组件
@@ -28,7 +29,7 @@ group:
  * description: 只需要在 `Divider` 组件中设置文本或组件（或空），即可实现基础的分隔线功能。
  * hideActions: '["CSB"]'
  */
-import React from "react";
+import React from 'react';
 import { Divider } from 'nuwa-design';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons'
@@ -48,7 +49,7 @@ export default () => <>
  * description: 分隔线支持左对齐 `left` 、居中对齐 `center` 和右对齐 `right` 。
  * hideActions: '["CSB"]'
  */
-import React from "react";
+import React from 'react';
 import { Divider } from 'nuwa-design';
 
 export default () => <>
@@ -66,7 +67,7 @@ export default () => <>
  * description: 我们按照文字距离分隔线的距离设计了三种间距，较小 `small` 、适中 `medium` 和较大 `large`。
  * hideActions: '["CSB"]'
  */
-import React from "react";
+import React from 'react';
 import { Divider } from 'nuwa-design';
 
 export default () => <>
@@ -85,7 +86,7 @@ export default () => <>
  * description: 按照组件库设计理念，分隔线支持配置不同的类型，您可以选择适合场景的分隔线。
  * hideActions: '["CSB"]'
  */
-import React from "react";
+import React from 'react';
 import { Divider } from 'nuwa-design';
 
 export default () => <>
