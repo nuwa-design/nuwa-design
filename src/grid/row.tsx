@@ -12,10 +12,14 @@ import { getGlobalStyleConfig } from '../common/utils';
 const { gridPrefix } = getGlobalStyleConfig();
 
 const Row: React.FC<IRowProps> = (props: IRowProps) => {
-  const { className, children } = props;
+  const { className, onClick, children } = props;
   const innerCls = classNames(`${gridPrefix}-row`);
 
-  return <div className={classNames(innerCls, className)}>{children}</div>;
+  return (
+    <div className={classNames(innerCls, className)} onClick={onClick}>
+      {children}
+    </div>
+  );
 };
 
 Row.propTypes = {};

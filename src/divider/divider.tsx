@@ -16,7 +16,7 @@ import { SizeMap } from '../common/configs';
 const { dividerPrefix } = getGlobalStyleConfig();
 
 const Divider: React.FC<IDividerProps> = (props: IDividerProps) => {
-  const { textPadding, type, align, className, children } = props;
+  const { textPadding, type, align, className, onClick, children } = props;
 
   const realSize =
     typeof textPadding === 'string'
@@ -33,7 +33,7 @@ const Divider: React.FC<IDividerProps> = (props: IDividerProps) => {
   });
 
   return (
-    <div className={classNames(innerCls, className)}>
+    <div className={classNames(innerCls, className)} onClick={onClick}>
       <span />
       {children && <span className={innerTextCls}>{children}</span>}
       <span />
@@ -49,6 +49,7 @@ Divider.propTypes = {
 
 Divider.defaultProps = {
   align: 'center',
+  textPadding: 'medium',
 };
 
 export default Divider;
