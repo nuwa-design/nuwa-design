@@ -1,10 +1,26 @@
 # Changelog
 
+### [0.3.0](https://github.com/nuwa-design/nuwa-design/releases/tag/v0.2.0) (2021-11-27)
+
+### Features
+
+* 🎸 栅格组件加入组件库大家庭，新增 `Grid.Row`、`Grid.Col` 组件，使用方式详见 [Grid 排版](https://nuwa.design/components/grid)。
+
+### Bug Fixes
+
+* 🐛 修复排版组件 `Divider` 无法使用 `onClick` 的问题。
+
+### Docs
+
+* ✏️ 上线栅格组件功能文档。
+* ✏️ 排版组件 `Typography` 文档部分描述文案修改。
+* ✏️ 按钮组件 `Button` 文档部分展示用例修改。
+
 ### [0.2.0](https://github.com/nuwa-design/nuwa-design/releases/tag/v0.2.0) (2021-11-27)
 
 ### Features
 
-* 🎸 分隔线组件全新上线，新增 `Divider` 组件，使用方式详见 [Typography 排版](https://nuwa.design/components/divider)。
+* 🎸 分隔线组件全新上线，新增 `Divider` 组件，使用方式详见 [Divider 分隔线](https://nuwa.design/components/divider)。
 
 ### Bug Fixes
 
