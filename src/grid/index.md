@@ -1,5 +1,6 @@
 ---
 title: Grid 栅格
+order: 1
 nav:
  path: /components
  title: 组件
@@ -37,7 +38,7 @@ group:
  * description: 使用单一的一组 `Row` 和 `Col` 栅格组件，就可以创建一个基本的栅格系统，所有列（`Col`）必须放在 `Row` 内。
  * hideActions: '["CSB"]'
  */
-import React from "react";
+import React from 'react';
 import { Grid } from 'nuwa-design';
 import Container from './demo/Container';
 
@@ -115,7 +116,7 @@ export default () => <>
  * description: 使用 `offset` 可以将列向右侧偏。例如，`offset={4}` 表示将元素向右侧偏移了 4 个列（`column`）的宽度。
  * hideActions: '["CSB"]'
  */
-import React from "react";
+import React from 'react';
 import { Grid } from 'nuwa-design';
 import Container from './demo/Container';
 
@@ -166,7 +167,7 @@ export default () => <>
  * description: 通过使用 `push` 和 `pull` 属性可以很容易的改变列（`column`）的顺序。
  * hideActions: '["CSB"]'
  */
-import React from "react";
+import React from 'react';
 import { Grid } from 'nuwa-design';
 import Container from './demo/Container';
 
