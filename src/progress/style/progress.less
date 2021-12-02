@@ -1,0 +1,39 @@
+/**
+  Progress main style
+ */
+
+@import '../../style/variable';
+@import '../../style/mixins/index';
+
+.progress {
+  display: flex;
+  height: @nuwa-progress-height;
+  overflow: hidden; // force rounded corners by cropping it
+  .font-size(@nuwa-progress-font-size);
+  background-color: @nuwa-progress-bg;
+  .border-radius(@nuwa-progress-border-radius);
+  .box-shadow(@nuwa-progress-box-shadow);
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: @nuwa-progress-bar-color;
+  text-align: center;
+  white-space: nowrap;
+  background-color: @nuwa-progress-bar-bg;
+  .transition(@nuwa-progress-bar-transition);
+}
+
+
+.progress-bar-striped {
+  .gradient-striped();
+  background-size: @nuwa-progress-height @nuwa-progress-height;
+}
+
+
+.progress-bar-animated {
+  animation: @nuwa-progress-bar-animation-timing progress-bar-stripes;
+}
