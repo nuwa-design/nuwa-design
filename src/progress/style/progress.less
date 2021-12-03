@@ -5,7 +5,7 @@
 @import '../../style/variable';
 @import '../../style/mixins/index';
 
-.progress {
+.@{progress-prefix-cls}-progress {
   display: flex;
   height: @nuwa-progress-height;
   overflow: hidden; // force rounded corners by cropping it
@@ -15,7 +15,7 @@
   .box-shadow(@nuwa-progress-box-shadow);
 }
 
-.progress-bar {
+.@{progress-prefix-cls}-progress-bar {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,18 +28,18 @@
 }
 
 
-.progress-bar-striped {
+.@{progress-prefix-cls}-progress-bar-striped {
   .gradient-striped();
   background-size: @nuwa-progress-height @nuwa-progress-height;
 }
 
 
-.progress-bar-animated when (@nuwa-enable-transitions) {
+.@{progress-prefix-cls}-progress-bar-animated when (@nuwa-enable-transitions) {
   animation: @nuwa-progress-bar-animation-timing progress-bar-stripes;
 }
 
 
-.progress-bar-animated when (@nuwa-enable-reduced-motion) {
+.@{progress-prefix-cls}-progress-bar-animated when (@nuwa-enable-reduced-motion) {
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }

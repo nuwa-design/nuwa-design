@@ -10,14 +10,14 @@ import classNames from 'classnames';
 import { IProgressProps } from './interface';
 import { getGlobalStyleConfig } from '../common/utils';
 
-const { dividerPrefix } = getGlobalStyleConfig();
+const { progressPrefix } = getGlobalStyleConfig();
 
 const Progress: React.FC<IProgressProps> = (props: IProgressProps) => {
-  const { children } = props;
+  const { className, children } = props;
 
-  // const innerCls = classNames(dividerPrefix, {});
+  const innerProgressCls = classNames(`${progressPrefix}-progress`);
 
-  return <div>{children}</div>;
+  return <div className={classNames(innerProgressCls, className)}>{children}</div>;
 };
 
 Progress.propTypes = {};
