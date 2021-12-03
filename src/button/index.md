@@ -1,5 +1,6 @@
 ---
 title: Button 按钮 
+order: 2
 nav:
  path: /components
  title: 组件
