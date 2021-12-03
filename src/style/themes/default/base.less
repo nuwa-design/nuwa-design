@@ -16,3 +16,121 @@
   display: block;
   width: 100%;
 }
+
+each(@theme-colors, {
+  @base: @value[base];
+  @inverse: @value[inverse];
+
+  .@{nuwa-prefix}-bg-@{key} {
+    background-color: @base;
+  }
+
+  .@{nuwa-prefix}-bg-light-1-@{key} {
+    background-color: lighten(@base, @color-scale-1);
+  }
+
+  .@{nuwa-prefix}-bg-light-2-@{key} {
+    background-color: lighten(@base, @color-scale-2);
+  }
+
+  .@{nuwa-prefix}-bg-light-3-@{key} {
+    background-color: lighten(@base, @color-scale-3);
+  }
+
+  .@{nuwa-prefix}-bg-light-4-@{key} {
+    background-color: lighten(@base, @color-scale-4);
+  }
+
+  .@{nuwa-prefix}-bg-light-5-@{key} {
+    background-color: lighten(@base, @color-scale-5);
+  }
+  .@{nuwa-prefix}-bg-light-6-@{key} {
+    background-color: lighten(@base, @color-scale-6);
+  }
+
+  .@{nuwa-prefix}-bg-light-7-@{key} {
+    background-color: lighten(@base, @color-scale-7);
+  }
+
+  .@{nuwa-prefix}-bg-light-8-@{key} {
+    background-color: lighten(@base, @color-scale-8);
+  }
+
+  .@{nuwa-prefix}-bg-light-9-@{key} {
+    background-color: lighten(@base, @color-scale-9);
+  }
+
+
+  // Darken
+
+  .@{nuwa-prefix}-bg-dark-1-@{key} {
+    background-color: darken(@base, @color-scale-1);
+  }
+
+  .@{nuwa-prefix}-bg-dark-2-@{key} {
+    background-color: darken(@base, @color-scale-2);
+  }
+
+  .@{nuwa-prefix}-bg-dark-3-@{key} {
+    background-color: darken(@base, @color-scale-3);
+  }
+
+  .@{nuwa-prefix}-bg-dark-4-@{key} {
+    background-color: darken(@base, @color-scale-4);
+  }
+
+  .@{nuwa-prefix}-bg-dark-5-@{key} {
+    background-color: darken(@base, @color-scale-5);
+  }
+  .@{nuwa-prefix}-bg-dark-6-@{key} {
+    background-color: darken(@base, @color-scale-6);
+  }
+
+  .@{nuwa-prefix}-bg-dark-7-@{key} {
+    background-color: darken(@base, @color-scale-7);
+  }
+
+  .@{nuwa-prefix}-bg-dark-8-@{key} {
+    background-color: darken(@base, @color-scale-8);
+  }
+
+  .@{nuwa-prefix}-bg-dark-9-@{key} {
+    background-color: darken(@base, @color-scale-9);
+  }
+})
+
+.@{nuwa-prefix}-bg-white {
+  background-color: @white;
+}
+
+.@{nuwa-prefix}-bg-gray-1 {
+  background-color: @gray-100;
+}
+.@{nuwa-prefix}-bg-gray-2 {
+  background-color: @gray-200;
+}
+.@{nuwa-prefix}-bg-gray-3 {
+  background-color: @gray-300;
+}
+.@{nuwa-prefix}-bg-gray-4 {
+  background-color: @gray-400;
+}
+.@{nuwa-prefix}-bg-gray-5 {
+  background-color: @gray-500;
+}
+.@{nuwa-prefix}-bg-gray-6 {
+  background-color: @gray-600;
+}
+.@{nuwa-prefix}-bg-gray-7 {
+  background-color: @gray-700;
+}
+.@{nuwa-prefix}-bg-gray-8 {
+  background-color: @gray-800;
+}
+.@{nuwa-prefix}-bg-gray-9 {
+  background-color: @gray-900;
+}
+.@{nuwa-prefix}-bg-black {
+  background-color: @black;
+}
+
