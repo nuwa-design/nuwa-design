@@ -21,6 +21,7 @@ export const getGlobalStyleConfig: () => IGlobalStyleConfig = () => {
     linkPrefix: variables.linkPrefix || `${nuwaPrefix}_link`,
     dividerPrefix: variables.dividerPrefix || `${nuwaPrefix}_divider`,
     gridPrefix: variables.gridPrefix || `${nuwaPrefix}_grid`,
+    progressPrefix: variables.progressPrefix || `${nuwaPrefix}_progress`,
   };
   return config;
 };

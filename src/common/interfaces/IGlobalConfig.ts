@@ -13,6 +13,7 @@ export interface IGlobalStyleConfig {
   btnPrefix?: string;
   dividerPrefix?: string;
   gridPrefix?: string;
+  progressPrefix?: string;
 }
 
 export default {};
