@@ -34,6 +34,13 @@
 }
 
 
-.progress-bar-animated {
+.progress-bar-animated when (@nuwa-enable-transitions) {
   animation: @nuwa-progress-bar-animation-timing progress-bar-stripes;
+}
+
+
+.progress-bar-animated when (@nuwa-enable-reduced-motion) {
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }

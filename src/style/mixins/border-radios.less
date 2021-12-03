@@ -1,10 +1,10 @@
 /**
   Border Radius Mixins
  */
-.border-radius(@radius, @fallback-border-radius: false) when (@enable-rounded = true) {
+.border-radius(@radius, @fallback-border-radius: false) when (@nuwa-enable-rounded = true) {
   border-radius: @radius;
 }
 
-.border-radius(@radius, @fallback-border-radius: false) when (@enable-rounded = false) {
+.border-radius(@radius, @fallback-border-radius: false) when (@nuwa-enable-rounded = false) {
   border-radius: 0;
 }
