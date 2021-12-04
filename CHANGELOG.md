@@ -1,6 +1,24 @@
 # Changelog
 
-### [0.3.0](https://github.com/nuwa-design/nuwa-design/releases/tag/v0.2.0) (2021-11-27)
+### [0.4.0](https://github.com/nuwa-design/nuwa-design/releases/tag/v0.4.0) (2021-12-04)
+
+### Features
+
+* 🎸 进度条组件加入组件库大家庭，新增 `Progress` 组件，使用方式详见 [Progress 进度条](https://nuwa.design/components/progress)。
+* 🎸 新增部分全局样式：全局背景 `nuwa-bg-@{themeColor}`、`nuwa-bg-light-@{level}-@{themeColor}`、`nuwa-bg-gray-@{level}` 等。
+* 🎸 新增渐变动画开关：`@nuwa-enable-transitions`。
+* 🎸 新增动画减弱开关：`@nuwa-enable-reduced-motion`。
+
+### Bug Fixes
+
+* 🐛 修复样式变量 `@nuwa-enable-rounded` 无法生效的问题。
+
+### Docs
+
+* ✏️ 上线 **进度条组件** 功能文档。
+* ✏️ 上线 **色彩** 功能文档。
+
+### [0.3.0](https://github.com/nuwa-design/nuwa-design/releases/tag/v0.3.0) (2021-11-27)
 
 ### Features
 

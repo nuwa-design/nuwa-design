@@ -11,6 +11,7 @@
 @btn-prefix-cls: ~'@{nuwa-prefix}_btn';
 @divider-prefix-cls: ~'@{nuwa-prefix}_divider';
 @grid-prefix-cls: ~'@{nuwa-prefix}_grid';
+@progress-prefix-cls: ~'@{nuwa-prefix}_progress';
 
 /* Base System */
 @white: #FFFFFF;
@@ -25,11 +26,26 @@
 @gray-900: #212529;
 @black: #000000;
 
+@color-scale-1: 1%;
+@color-scale-2: 2%;
+@color-scale-3: 5%;
+@color-scale-4: 8%;
+@color-scale-5: 12%;
+@color-scale-6: 17%;
+@color-scale-7: 22%;
+@color-scale-8: 30%;
+@color-scale-9: 38%;
+
 @link-color: @primary[base];
 @link-decoration: underline;
 @link-shade-percentage: 20%;
 @link-hover-color: @brand[inverse];
 @link-hover-decoration: null;
+
+@box-shadow: 0 .5rem 1rem rgba(@black, .15);
+@box-shadow-sm: 0 .125rem .25rem rgba(@black, .075);
+@box-shadow-lg: 0 1rem 3rem rgba(@black, .175);
+@box-shadow-inset: inset 0 1px 2px rgba(@black, .075);
 
 /* Font Weight */
 @font-weight-lighter: lighter;
@@ -79,7 +95,7 @@
 }
 
 @info: {
-  base: #5578eb;
+  base: #909399;
   inverse: #fff;
 }
 
@@ -95,7 +111,7 @@
 
 // Theme Brand Color
 @brand: {
-  base: #5d78ff;
+  base: #409eff;
   inverse: #fff;
 }
 
@@ -129,6 +145,8 @@
 @color-contrast-light: @white;
 
 /* Style Ability */
-@enable-rounded: true;
+@nuwa-enable-rounded: true;
+@nuwa-enable-transitions: true;
+@nuwa-enable-reduced-motion: true;
 
 @spacer: 1rem;

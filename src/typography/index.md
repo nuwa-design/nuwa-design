@@ -1,5 +1,6 @@
 ---
 title: Typography 排版
+order: 3
 nav:
  path: /components
  title: 组件

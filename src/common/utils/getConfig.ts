@@ -6,7 +6,7 @@
  */
 import { IGlobalStyleConfig } from '../interfaces';
 // @ts-ignore
-import variables from '../../style/index.less';
+import variables from '../../style/variable.less';
 
 /**
  * 获取全局样式变量
@@ -21,6 +21,7 @@ export const getGlobalStyleConfig: () => IGlobalStyleConfig = () => {
     linkPrefix: variables.linkPrefix || `${nuwaPrefix}_link`,
     dividerPrefix: variables.dividerPrefix || `${nuwaPrefix}_divider`,
     gridPrefix: variables.gridPrefix || `${nuwaPrefix}_grid`,
+    progressPrefix: variables.progressPrefix || `${nuwaPrefix}_progress`,
   };
   return config;
 };
