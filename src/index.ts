@@ -10,3 +10,4 @@ export { default as Grid } from './grid';
 export { default as Divider } from './divider';
 export { default as Typography } from './typography';
 export { default as Button } from './button';
+export { default as Progress } from './progress';

@@ -8,3 +8,13 @@
 .border-radius(@radius, @fallback-border-radius: false) when (@nuwa-enable-rounded = false) {
   border-radius: 0;
 }
+
+.border-right-radius(@radius, @fallback-border-radius: false) when (@nuwa-enable-rounded = true) {
+  border-bottom-right-radius: @radius;
+  border-top-right-radius: @radius;
+}
+
+.border-radius(@radius, @fallback-border-radius: false) when (@nuwa-enable-rounded = false) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}

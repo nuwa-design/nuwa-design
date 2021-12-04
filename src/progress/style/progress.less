@@ -13,6 +13,26 @@
   background-color: @nuwa-progress-bg;
   .border-radius(@nuwa-progress-border-radius);
   .box-shadow(@nuwa-progress-box-shadow);
+
+  &.@{progress-prefix-cls}-sm {
+    height: @nuwa-progress-height-small;
+
+    .@{progress-prefix-cls}-progress-bar {
+      &:last-of-type {
+        .border-right-radius(@nuwa-progress-border-radius-small);
+      }
+    }
+  }
+
+  &.@{progress-prefix-cls}-lg {
+    height: @nuwa-progress-height-large;
+
+    .@{progress-prefix-cls}-progress-bar {
+      &:last-of-type {
+        .border-right-radius(@nuwa-progress-border-radius-large);
+      }
+    }
+  }
 }
 
 .@{progress-prefix-cls}-progress-bar {
@@ -25,6 +45,10 @@
   white-space: nowrap;
   background-color: @nuwa-progress-bar-bg;
   .transition(@nuwa-progress-bar-transition);
+
+  &:last-of-type {
+    .border-right-radius(@nuwa-progress-border-radius);
+  }
 }
 
 
