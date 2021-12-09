@@ -22,6 +22,7 @@ export const getGlobalStyleConfig: () => IGlobalStyleConfig = () => {
     dividerPrefix: variables.dividerPrefix || `${nuwaPrefix}_divider`,
     gridPrefix: variables.gridPrefix || `${nuwaPrefix}_grid`,
     progressPrefix: variables.progressPrefix || `${nuwaPrefix}_progress`,
+    alertPrefix: variables.alertPrefix || `${nuwaPrefix}_alert`,
   };
   return config;
 };

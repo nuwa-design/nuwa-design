@@ -1,0 +1,31 @@
+@import '../../style/variable';
+@import '../../style/mixins/index';
+
+.@{alert-prefix-cls}-alert {
+  position: relative;
+  padding: @nuwa-alert-padding-y @nuwa-alert-padding-x;
+  margin-bottom: @nuwa-alert-margin-bottom;
+  border: @nuwa-alert-border-width solid transparent;
+  .border-radius(@nuwa-alert-border-radius);
+}
+
+.@{alert-prefix-cls}-alert-heading {
+  color: inherit;
+}
+
+.@{alert-prefix-cls}-alert-link {
+  font-weight: @nuwa-alert-link-font-weight;
+}
+
+
+.@{alert-prefix-cls}-alert-dismissible {
+  padding-right: @nuwa-alert-dismissible-padding-r;
+
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: @stretched-link-z-index + 1;
+    padding: @nuwa-alert-padding-y * 1.25 @nuwa-alert-padding-x;
+  }
+}

@@ -14,6 +14,7 @@ export interface IGlobalStyleConfig {
   dividerPrefix?: string;
   gridPrefix?: string;
   progressPrefix?: string;
+  alertPrefix?: string;
 }
 
 export default {};
