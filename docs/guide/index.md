@@ -39,13 +39,6 @@ Nuwa Design 有着丰富的社区生态，部分社区正处于建设中。
 * [商店](https://nuwa.store)
 * [更新日志](https://github.com/nuwa-design/nuwa-design/releases)
 
-## 获取帮助
-
-如果您在使用的过程中碰到问题，可以通过下面几个途径寻求帮助：
-
-* 我们提供了详细的[组件文档](https://shine.design/guide)，大部分问题都可以在文档中得以解决。
-* 利用强大的 [Issue](https://github.com/nuwa-design/nuwa-design/issues) 功能，您可以直接进行提问，我们会随时关注并解答，同时我们也鼓励资深用户通过 Issue 给新人提供帮助。
-
 ## 参与项目
 
 我们很期待您能参与进来一起开发 :)，但我们希望您能遵守相关约定：
